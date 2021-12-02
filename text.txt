@@ -1,0 +1,7 @@
+use grid
+make a grid of blocks
+use prototype to build the different blocks
+randomize function to populate the grid with diffferent kind of blocks
+
+
+

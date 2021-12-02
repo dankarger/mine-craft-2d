@@ -1,6 +1,22 @@
 import {Tile,tileSky,tileGround,tileGrass} from "./tile.js";
+import {populate} from "./gameboard.js"
+import {tools} from "./inventory.js";
 
 const gameBoard = document.querySelector('#gameBoard');
+
+
+
+
+populate()
+
+
+
+
+
+
+
+
+
 //
 // const images = {
 //     ground:"../images/ground.jpg",
@@ -47,31 +63,31 @@ const gameBoard = document.querySelector('#gameBoard');
 //         this.position = position
 //     }
 // }
-
-function injectCell2(tile) {
-     let currentTile = document.createElement('div')
-    currentTile.style.background =tile.img + "no-repeat center center/cover"
-    currentTile.style.gridRowStart = tile.position.y
-    currentTile.style.gridColumnStart = tile.position.x
-    // currentTile.classList.add(`${tile.type}`)
-    gameBoard.appendChild(currentTile)
-}
+//
+// function injectCell2(tile) {
+//      let currentTile = document.createElement('div')
+//     currentTile.style.background =tile.img + "no-repeat center center/cover"
+//     currentTile.style.gridRowStart = tile.position.y
+//     currentTile.style.gridColumnStart = tile.position.x
+//     // currentTile.classList.add(`${tile.type}`)
+//     gameBoard.appendChild(currentTile)
+// }
 
 // injectCell2(tileGround,{x:2,y:3})
-
-function populate(){
-  for(let i =1;i<21;i++) {
-      for(let j=1;j<21;j++) {
-          let currentTile = new Tile(tileGrass)
-          currentTile.position = {x:i,y:j}
-          injectCell2( currentTile)
-      }
-  }
+//
+// function populate(){
+//   for(let i =1;i<21;i++) {
+//       for(let j=1;j<21;j++) {
+//           let currentTile = new Tile(tileGrass)
+//           currentTile.position = {x:i,y:j}
+//           injectCell2( currentTile)
+//       }
+//   }
     // let tile1 = new Tile(tileGround,{x:1,y:1})
     // injectCell2(tile1,tile1.position)
 
-}
-populate()
+// }
+
 
 
 

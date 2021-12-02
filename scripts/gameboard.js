@@ -8,8 +8,11 @@ export function injectCell2(tile) {
     currentTile.style.background =tile.img + "no-repeat center center/cover"
     currentTile.style.gridRowStart = tile.position.y
     currentTile.style.gridColumnStart = tile.position.x
+    currentTile.dataset.positionX  = tile.position.x
+    currentTile.dataset.positionY  = tile.position.y
+    console.log('cuurent',currentTile.dataset)
     // currentTile.classList.add(`${tile.type}`)
-    gameBoard.appendChild(currentTile)
+   return gameBoard.appendChild(currentTile)
 }
 
 

@@ -1,10 +1,34 @@
 import {Tile,tileSky,tileGround,tileGrass} from "./tile.js";
-import {populate} from "./gameboard.js"
+import {injectCell2, populate} from "./gameboard.js"
 import {tools} from "./inventory.js";
 
 const gameBoard = document.querySelector('#gameBoard');
 
 
+gameBoard.addEventListener('click',(event)=>{
+    if(!event.target.dataset) return
+    let tile = event.target;
+
+    // let newTile = new Tile(tileSky)
+    // newTile.position = {x:tile.dataset.positionX,y:tile.dataset.positionY}
+    //  tile.remove(tile)
+    //  injectCell2(newTile);
+    //  console.log(newTile)
+
+    replaceTile(tile, tileSky)
+    replaceTile(tile, tileGrass)
+
+})
+
+
+function replaceTile(tile,target) {
+    let newTile = new Tile(target)
+    newTile.position = {x:tile.dataset.positionX,y:tile.dataset.positionY}
+    tile.remove(tile)
+    injectCell2(newTile);
+    // console.log(newTile)
+
+}
 
 
 populate()

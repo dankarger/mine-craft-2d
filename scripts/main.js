@@ -6,9 +6,11 @@ const gameBoard = document.querySelector('#gameBoard');
 const toolsList = document.querySelectorAll('.tools')
 const tooldDiv = document.querySelector('.tools-div')
 const slot1 = document.querySelector('.slot1')
-
+const body = document.querySelector('body')
 let currentTool
 let currentTileinInventory
+
+
 
 
 tooldDiv.addEventListener('click',(event)=> {
@@ -17,7 +19,6 @@ tooldDiv.addEventListener('click',(event)=> {
         currentTool=selectedTool
         toolsList.forEach(tool => tool.classList.remove("selected-tool"))
         selectedTool.classList.toggle('selected-tool')
-        console.log(currentTool)
     }
 })
 
@@ -51,7 +52,7 @@ gameBoard.addEventListener('click',(event)=> {
     }
 })
 
-function replaceTile(tile, target) {
+export function replaceTile(tile, target) {
         let newTile = new Tile(target)
         newTile.position = {x: tile.dataset.positionX, y: tile.dataset.positionY}
         tile.remove(tile)
@@ -73,11 +74,6 @@ function slot1Update(tile) {
     currentTileinInventory= tile
 }
 function slot1Empty(tile,target) {
-    // let newTile = new Tile(target.dataset.type)
-    // newTile.position = {x: tile.dataset.positionX, y: tile.dataset.positionY}
-    // tile.remove(tile)
-    if(target.dataset.type===tileGrass.type) return replaceTile(tile,tileGrass)
-    // injectCell2(newTile);
     slot1.style.background = 'white'
     if(target.dataset.type===tileGrass.type) return replaceTile(tile,tileGrass)
     if(target.dataset.type===tileGround.type) return replaceTile(tile,tileGround)
@@ -90,11 +86,24 @@ function playSound(sound) {
     let audio = new Audio(sound);
     audio.play();
 }
+function playMusic() {
+    setTimeout(()=>{playSound("../sounds/Sweden_-_Minecraft_Piano_Tutorial_Synthesia_Torby_Brand[grabfrom.com].mp3")},3000)
 
+}
 populate()
+// window.onload = (event) => {
+//     let firstInteraction = false
+//     body.addEventListener('click',()=>{
+//         firstInteraction=true
+//     })
+//     // while(!firstInteraction){ }
+//     //    if(firstInteraction) playMusic()
+// };
 
-// setTimeout(()=>{playSound("../sounds/scnd theme  keyscape 4  monster sleeping.wav")},3000)
+  // setTimeout(()=>{playSound("../sounds/Sweden_-_Minecraft_Piano_Tutorial_Synthesia_Torby_Brand[grabfrom.com].mp3")},3000)
 
 
 // TODO: remove const tools from inventory.sj
-
+// TODO: add a simple audio mixer
+// TODO:change sounds
+// TODO: add meta tags

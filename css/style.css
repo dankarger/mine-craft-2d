@@ -60,6 +60,7 @@ body {
     /*filter: brightness(90%);*/
     filter: brightness(90%);
     position: relative;
+    border-color: #b9b969;
 }
 .selected-tool:after{
     content: "";
@@ -70,10 +71,17 @@ body {
     left:0;
     background: rgba(255, 215, 0, 0.35);
 }
+
 .tools {
     min-width:90%;
     height: 30%;
     border:3px solid #0e0e0e;
+}
+.slot1 {
+    width:2rem;
+    height: 3rem;
+    border: 8px whitesmoke solid;
+    background: rgba(255, 255, 255, 0.85);
 }
 .shovel {
 

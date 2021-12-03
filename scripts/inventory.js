@@ -10,3 +10,8 @@ export const tools = {
 
 
 }
+//
+// const slot1 = document.querySelector('slot1')
+// export function slot1Update(tile) {
+//     slot1.style.background = tile.style.background
+// }

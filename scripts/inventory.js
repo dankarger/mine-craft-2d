@@ -3,9 +3,9 @@ export const tools = {
             img:'../images/shovel.jpg'
                 },
     axe:{name:"axe",
-    img:'../images/shovel.jpg'},
+    img:'../images/axe2.jpg'},
     pickaxe:{name:"pickaxe",
-            img:'../images/pickaxe.jpg\'}'
+            img:'../images/pickaxe2.jpg\'}'
     }
 
 

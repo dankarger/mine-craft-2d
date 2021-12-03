@@ -1,4 +1,4 @@
-import {Tile, tileSky, tileGround, tileGrass, tileRock, tileWood} from "./tile.js";
+import {Tile, tileSky, tileGround, tileGrass, tileRock, tileWood, tileRockUp} from "./tile.js";
 import {injectCell2, populate} from "./gameboard.js"
 // import {tools} from "./inventory.js";
 
@@ -18,6 +18,7 @@ tooldDiv.addEventListener('click',(event)=> {
     if(selectedTool!==tooldDiv) {
         currentTool=selectedTool
         toolsList.forEach(tool => tool.classList.remove("selected-tool"))
+        slot1.classList.remove("selected-tool")
         selectedTool.classList.toggle('selected-tool')
     }
 })
@@ -36,14 +37,14 @@ gameBoard.addEventListener('click',(event)=> {
             slot1Update(tile)
             return replaceTile(tile, tileSky)
         }
-        if (tile.dataset.type === "tileRock" && currentTool.dataset.tool === "pickaxe") {
+        if ((tile.dataset.type === "tileRock" || tile.dataset.type === "tileRockUp")&& currentTool.dataset.tool === "pickaxe") {
             playSound("../sounds/round_pop_click2.wav")
             slot1Update(tile)
            return replaceTile(tile, tileSky)
         }
             if (tile.dataset.type === "tileSky" && currentTool.dataset.tool === "slot1") {
                 if(currentTool.style.background==='white') return
-                playSound("../sounds/short_whoosh1.wav")
+
                 return slot1Empty(tile, currentTileinInventory)
         }else{
             playSound("../sounds/melodic1_click.wav")
@@ -74,11 +75,20 @@ function slot1Update(tile) {
     currentTileinInventory= tile
 }
 function slot1Empty(tile,target) {
-    slot1.style.background = 'white'
-    if(target.dataset.type===tileGrass.type) return replaceTile(tile,tileGrass)
-    if(target.dataset.type===tileGround.type) return replaceTile(tile,tileGround)
-    if(target.dataset.type===tileRock.type) return replaceTile(tile,tileRock)
-    if(target.dataset.type===tileWood.type) return replaceTile(tile,tileWood)
+    slot1.style.background = 'transparent'
+    if(currentTileinInventory!=='none') {
+        playSound("../sounds/short_whoosh1.wav")
+        if (target.dataset.type === tileGrass.type)   replaceTile(tile, tileGrass)
+        if (target.dataset.type === tileGround.type) replaceTile(tile, tileGround)
+        if (target.dataset.type === tileRock.type) replaceTile(tile, tileRock)
+        if (target.dataset.type === tileRockUp.type) replaceTile(tile, tileRockUp)
+        if (target.dataset.type === tileWood.type)  replaceTile(tile, tileWood)
+    }
+
+     currentTileinInventory = 'none'
+    console.log(currentTileinInventory)
+
+
 
 }
 

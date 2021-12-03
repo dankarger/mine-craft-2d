@@ -1,4 +1,4 @@
-import {Tile, tileGrass, tileGround, tileRock, tileSky} from "./tile.js";
+import {Tile, tileGrass, tileGround, tileRock, tileSky, tileRockUp, tileWood} from "./tile.js";
 import {replaceTile} from "./main.js";
 
 const gameBoard = document.querySelector('#gameBoard');
@@ -19,9 +19,13 @@ export function injectCell2(tile) {
 
 export function populate() {
     for (let i = 1; i < 21; i++) {
+        // console.log('i',i)
         for (let j = 1; j < 21; j++) {
+            // console.log('i',i,'j',j)
             let currentTile={};
             if(j <= 13) currentTile = new Tile(tileSky);
+            // if(j===13) Math.floor(Math.random()*10+1)<9.5?currentTile = new Tile(tileSky):currentTile = new Tile(tileRockUp);
+
             if(j >13 && j<15) currentTile = new Tile(tileGrass);
             // if(j ===15)Math.floor(Math.random()*2)<1?currentTile = new Tile(tileGrass):currentTile = new Tile(tileGround);
             // if(j ===15)Math.floor(Math.random()*2)<1?currentTile = new Tile(tileGrass):currentTile = new Tile(tileGround);
@@ -35,12 +39,13 @@ export function populate() {
     createRock()
 }
 
-function createRock(tile) {
+function createRock() {
     let allSkyTiles = gameBoard.querySelectorAll('[data-type=tileSky]')
-    console.log(allSkyTiles.length/20)
-    let randomtile = allSkyTiles[250]
-    replaceTile(randomtile,new Tile(tileRock))
-    // let bottomRowSkyTiles = allSkyTiles.querySelectorAll('[data-positionY="13"]')
+    console.log('tilt',allSkyTiles.dataset)
+    let randomtile = allSkyTiles[44]
+     let bottomRowSkyTiles = gameBoard.querySelectorAll('[data-position-y="13"]')
+    replaceTile(bottomRowSkyTiles[2],new Tile(tileRockUp))
+    console.log('bottom',bottomRowSkyTiles)
     // })
     // console.log(bottomRowSkyTiles)
     // let positionY = tile.dataset.positionY

@@ -105,6 +105,21 @@ body {
     background: url('../images/pickaxe3.png') no-repeat center center/cover;
 }
 
+
+/*Music player*/
+audio{
+    max-width:200px;
+    max-height:200px;
+
+}
+#audio-div {
+    width:20%;
+    margin-left:8rem;
+    position: absolute;
+    top:1px;
+    right: 1rem;
+}
+
 .wrong-tool-animation {
     animation: turning-red 100ms ease-in forwards;
 }

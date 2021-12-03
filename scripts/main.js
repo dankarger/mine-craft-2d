@@ -94,13 +94,18 @@ function slot1Empty(tile,target) {
 
 
 }
+const audioObject = document.querySelector('#music-player')
 
 function playSound(sound) {
     let audio = new Audio(sound);
     audio.play();
 }
+
 function playMusic() {
-    setTimeout(()=>{playSound("../sounds/Sweden_-_Minecraft_Piano_Tutorial_Synthesia_Torby_Brand[grabfrom.com].mp3")},3000)
+    // const x = document.getElementById("#music-player").controls;
+
+
+    setTimeout(()=>{audioObject.play()},3000)
 
 }
 populate()
@@ -114,7 +119,7 @@ populate()
 // };
 
   // setTimeout(()=>{playSound("../sounds/Sweden_-_Minecraft_Piano_Tutorial_Synthesia_Torby_Brand[grabfrom.com].mp3")},3000)
-
+playMusic()
 
 // TODO: remove const tools from inventory.sj
 // TODO: add a simple audio mixer

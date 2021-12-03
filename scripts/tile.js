@@ -73,3 +73,9 @@ export const tileCloud = {
     tool: 'none',
     img:images['cloud'],
 }
+
+export const tileGold = {
+    type: "tileGold",
+    tool: tools['pickaxe'],
+    img:images['gold'],
+}

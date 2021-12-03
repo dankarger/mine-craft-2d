@@ -1,0 +1,89 @@
+
+.tools-div {
+    width: 10vmin;
+    max-width:25%;
+    height: 50%;
+    background: rgba(24, 24, 26, 0.45);
+    border:4px solid #6F6A6A;
+    border-radius:10px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding:0.5rem 0.5rem;
+    margin-left:1rem;
+    margin-right:1rem;
+}
+.tools:hover {
+    transform: scale(1.041);
+    transition: 200ms ease-in;
+}
+.tools::selection {
+    transform: scale(1.041);
+    transition: 200ms ease-in;
+}
+.selected-tool{
+    transform: scale(1.041);
+    /*filter: brightness(90%);*/
+    filter: brightness(90%);
+    position: relative;
+    border-color: #b9b969;
+
+}
+.selected-tool:after{
+    content: "";
+    position: absolute;
+    width:100%;
+    height: 100%;
+    top:0;
+    left:0;
+    background: rgba(255, 215, 0, 0.35);
+}
+
+.tools {
+    min-width:90%;
+    height: 30%;
+    border:3px solid #d0c7c7;
+    background: #484343;
+}
+.slot1 {
+    width:2rem ;
+    height: 3rem;
+    border: 3px whitesmoke solid;
+    background: transparent;
+    margin-top:1rem;
+
+}
+.shovel {
+
+    background: url('../images/shovel3.png') no-repeat center center/cover;
+}
+.axe {
+
+    background: url('../images/axe3.png') no-repeat center center/cover;
+}
+.pickaxe {
+
+    background: url('../images/pickaxe3.png') no-repeat center center/cover;
+}
+
+
+
+.wrong-tool-animation {
+    animation: turning-red 100ms ease-in forwards;
+}
+
+@keyframes turning-red {
+    0%{
+
+    }
+    20%{
+        background: red;
+        opacity: 0.7;
+    }
+    80%{
+        background: red;
+        opacity: 0.4;
+    }
+
+}

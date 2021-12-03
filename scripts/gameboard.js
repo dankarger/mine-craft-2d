@@ -1,5 +1,5 @@
 import {Tile, tileGrass, tileGround, tileRock, tileSky, tileRockUp,
-        tileWood, tileBush,tileTree,tileCloud} from "./tile.js";
+        tileWood, tileBush,tileTree,tileCloud, tileGold} from "./tile.js";
 import {replaceTile} from "./main.js";
 
 const gameBoard = document.querySelector('#gameBoard');
@@ -19,13 +19,13 @@ export function populate() {
     for (let i = 1; i < 21; i++) {
         for (let j = 1; j < 21; j++) {
             let currentTile={};
-            if(j <= 13) currentTile = new Tile(tileSky);
+            if(j <= 13) currentTile = tileSky;
             // if(j===13) Math.floor(Math.random()*10+1)<9.5?currentTile = new Tile(tileSky):currentTile = new Tile(tileRockUp);
-            if(j >13 && j<15) currentTile = new Tile(tileGrass);
+            if(j >13 && j<15) currentTile = tileGrass;
             // if(j ===15)Math.floor(Math.random()*2)<1?currentTile = new Tile(tileGrass):currentTile = new Tile(tileGround);
             // if(j ===15)Math.floor(Math.random()*2)<1?currentTile = new Tile(tileGrass):currentTile = new Tile(tileGround);
-            if(j >=15&& j<18) currentTile = new Tile(tileGround);
-            if(j>=18) Math.floor(Math.random()*10+1)<8?currentTile = new Tile(tileGround):currentTile = new Tile(tileRock);
+            if(j >=15&& j<18) currentTile = tileGround;
+            if(j>=18) Math.floor(Math.random()*10+1)<8?currentTile = tileGround:currentTile = tileRock;
              currentTile.position = {x: i, y: j}
              injectCell2(currentTile);
         }
@@ -35,6 +35,7 @@ export function populate() {
     createBush()
     createTree()
     creatClouds()
+    createGold()
 }
 
 function selectBottomRowSkyTile(){
@@ -46,14 +47,14 @@ function selectBottomRowSkyTile(){
 }
 function createRock() {
     let [bottomRowSkyTiles,randomIndex,offset] = selectBottomRowSkyTile()
-    replaceTile(bottomRowSkyTiles[randomIndex],new Tile(tileRockUp))
-    if(offset===1)replaceTile(bottomRowSkyTiles[randomIndex+offset],new Tile(tileRockUp))
+    replaceTile(bottomRowSkyTiles[randomIndex],tileRockUp)
+    if(offset===1)replaceTile(bottomRowSkyTiles[randomIndex+offset],tileRockUp)
 }
 
 function createBush() {
     let [bottomRowSkyTiles,randomIndex,offset] = selectBottomRowSkyTile()
-    replaceTile(bottomRowSkyTiles[randomIndex],new Tile(tileBush))
-    if(offset===1)replaceTile(bottomRowSkyTiles[randomIndex+offset],new Tile(tileBush))
+    replaceTile(bottomRowSkyTiles[randomIndex],tileBush)
+    if(offset===1)replaceTile(bottomRowSkyTiles[randomIndex+offset],tileBush)
 }
 
 function createTree() {
@@ -61,11 +62,11 @@ function createTree() {
     const randomIndex = Math.floor(Math.random() *15 +1)
     const positionX = bottomRowSkyTiles[randomIndex].dataset.positionX
     if (bottomRowSkyTiles[randomIndex].dataset.type !== 'tileSky') return  createTree()
-    replaceTile(bottomRowSkyTiles[randomIndex], new Tile(tileWood))
+    replaceTile(bottomRowSkyTiles[randomIndex], tileWood)
     const upperTrunk = gameBoard.querySelector(`[data-position-x="${positionX}"] + [data-position-y="12"]`)
-    replaceTile(upperTrunk, new Tile(tileWood))
+    replaceTile(upperTrunk,tileWood)
     const upperTrunk2 = gameBoard.querySelector(`[data-position-x="${positionX}"] + [data-position-y="11"]`)
-    replaceTile(upperTrunk2, new Tile(tileWood))
+    replaceTile(upperTrunk2,tileWood)
     let branches = []
     for (let i=3 ; i>0;i--) {
         let offsetX = parseInt(positionX-2) +i
@@ -88,20 +89,26 @@ function creatClouds() {
         let topRowSky = gameBoard.querySelectorAll(` [data-position-y="${i}"]`)
         topRows.push(topRowSky)
     }
-
-    // replaceTile(topRows[2],new Tile(tileCloud))
     let randomPositionIndex = createRandomNumber(17)
-    replaceTile(topRows[2][randomPositionIndex+3],new Tile(tileCloud))
-    replaceTile(topRows[1][randomPositionIndex+2],new Tile(tileCloud))
-    replaceTile(topRows[4][14],new Tile(tileCloud))
+    replaceTile(topRows[2][randomPositionIndex+3],tileCloud)
+    replaceTile(topRows[1][randomPositionIndex+2],tileCloud)
+    replaceTile(topRows[4][14],tileCloud)
     for(let i = 1;i<=3;i++){
         console.log(topRows[i][i])
-        replaceTile(topRows[2][randomPositionIndex+i], new Tile(tileCloud))
-        replaceTile(topRows[1][randomPositionIndex], new Tile(tileCloud))
-        replaceTile(topRows[1][randomPositionIndex+1], new Tile(tileCloud))
-        replaceTile(topRows[2][Math.floor(randomPositionIndex/2)], new Tile(tileCloud))
-        // replaceTile(topRows[randomPositionIndex][i], new Tile(tileCloud))
+        replaceTile(topRows[2][randomPositionIndex+i],tileCloud)
+        replaceTile(topRows[1][randomPositionIndex], tileCloud)
+        replaceTile(topRows[1][randomPositionIndex+1],tileCloud)
+        replaceTile(topRows[2][Math.floor(randomPositionIndex/2)], tileCloud)
     }
+}
+
+
+
+function createGold(){
+    let random1  =createRandomNumber(20)
+    let  random2 =20-createRandomNumber(4)
+    let randomTile = gameBoard.querySelector(`[data-position-x="${random1}"]+[data-position-y="${random2}"]`)
+    replaceTile(randomTile,tileGold)
 }
 
 export function createRandomNumber(range) {

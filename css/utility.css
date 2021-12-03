@@ -1,0 +1,21 @@
+
+/*Music player*/
+
+audio {
+    max-width:200px;
+    max-height:200px;
+
+
+}
+#audio-div {
+    width:20%;
+    display: flex;
+    justify-content: right;
+    position: absolute;
+    top:1px;
+    right: 0;
+
+}
+hr {
+    color:#b7b0b0;
+}

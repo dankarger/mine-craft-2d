@@ -1,5 +1,5 @@
 import {Tile, tileSky, tileGround, tileGrass, tileRock,
-        tileWood, tileRockUp, tileBush,tileTree,tileCloud} from "./tile.js";
+        tileWood, tileRockUp, tileBush,tileTree,tileCloud,tileGold} from "./tile.js";
 import {createRandomNumber, injectCell2, populate} from "./gameboard.js"
 import {playMusic, playSound} from "./sound.js";
 import {wrongTools, slot1 } from "./inventory.js";
@@ -8,7 +8,6 @@ export let currentTileinInventory='none'
 const gameBoard = document.querySelector('#gameBoard');
 const toolsList = document.querySelectorAll('.tools')
 const tooldDiv = document.querySelector('.tools-div')
-// const slot1 = document.querySelector('.slot1')
 const body = document.querySelector('body')
 
 tooldDiv.addEventListener('click',(event)=> {
@@ -37,7 +36,7 @@ gameBoard.addEventListener('click',(event)=> {
                 slot1Update(tile)
                 return replaceTile(tile, tileSky)
         }
-        if ((tile.dataset.type === "tileRock" || tile.dataset.type === "tileRockUp")
+        if ((tile.dataset.type === "tileRock" || tile.dataset.type === "tileRockUp"||tile.dataset.type  === 'tileGold')
             && currentTool.dataset.tool === "pickaxe") {
                 playSound("../sounds/round_pop_click2.wav")
                 slot1Update(tile)
@@ -72,13 +71,14 @@ export function slot1Empty(tile,target) {
     // console.log(bottomNeighbourTile)
     if(currentTileinInventory!=='none' ) {
         playSound("../sounds/short_whoosh1.wav")
-        if (target.dataset.type === tileGrass.type)   replaceTile(tile, tileGrass)
+        if (target.dataset.type === tileGrass.type)  replaceTile(tile, tileGrass)
         if (target.dataset.type === tileGround.type) replaceTile(tile, tileGround)
-        if (target.dataset.type === tileRock.type) replaceTile(tile, tileRock)
+        if (target.dataset.type === tileRock.type)   replaceTile(tile, tileRock)
         if (target.dataset.type === tileRockUp.type) replaceTile(tile, tileRockUp)
-        if (target.dataset.type === tileWood.type)  replaceTile(tile, tileWood)
-        if (target.dataset.type === tileBush.type)  replaceTile(tile, tileBush)
-        if (target.dataset.type === tileTree.type)  replaceTile(tile, tileTree)
+        if (target.dataset.type === tileWood.type)   replaceTile(tile, tileWood)
+        if (target.dataset.type === tileBush.type)   replaceTile(tile, tileBush)
+        if (target.dataset.type === tileTree.type)   replaceTile(tile, tileTree)
+        if (target.dataset.type === tileGold.type)   replaceTile(tile, tileGold)
     }
     currentTileinInventory = 'none'
     console.log(currentTileinInventory)

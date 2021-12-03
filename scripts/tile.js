@@ -12,7 +12,6 @@ const images = {
     tree:"url('../images/tree.png')",
     bush:"url('../images/bush.png')",
     merchant:"url('../images/man.png')",
-
 }
 
 export class Tile {
@@ -80,6 +79,7 @@ export const tileGold = {
     tool: tools['pickaxe'],
     img:images['gold'],
 }
+
 export const tileMerchant = {
     type: "tileMerchant",
     tool: 'none',

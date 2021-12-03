@@ -6,5 +6,5 @@ export function playSound(sound) {
 }
 
 export function playMusic() {
-    setTimeout(()=>{audioObject.play()},3000)
+    setTimeout(()=>{audioObject.play()},500)
 }

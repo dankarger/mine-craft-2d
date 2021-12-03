@@ -7,10 +7,9 @@ body {
     align-items: center;
     margin: 0;
     font-family: 'Fuzzy Bubbles', cursive;
-    /*background-color: rgba(37, 37, 38, 0.66);*/
     background-color: rgba(0, 0, 0, 0.85);
-    /*padding-right:1%;*/
-
+    background: rgb(227,143,102);
+    background: linear-gradient(95deg, rgba(227,143,102,1) 0%, rgba(7,64,45,1) 0%, rgba(0,0,0,1) 26%, rgba(1,1,1,1) 75%, rgba(25,21,54,1) 89%);
 }
 
 #main {

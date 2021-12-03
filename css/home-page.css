@@ -1,0 +1,21 @@
+#home-page {
+    width:100vw;
+    height:100vh;
+    position:absolute;
+    top:0;
+    left:0;
+    background: url("../images/home1.jpg") no-repeat center center/contain;
+
+    background-color: black;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    z-index: 100;
+    padding-top: 5%;
+}
+
+.button-play {
+margin-top:2rem;
+
+}

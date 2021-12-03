@@ -20,32 +20,32 @@ export class Tile {
 }
 
 export const tileSky = {
-    type: "sky",
+    type: "tileSky",
     img: images["sky"],
     tool: "none",
     // position:null
 }
 export const  tileGround = {
-    type: "ground",
+    type: "tileGround",
     tool: tools['shovel'],
     img: images["ground"],
     // position: {x:null,y:null}
 }
 export const tileGrass = {
-    type: "grass",
+    type: "tileGrass",
     tool: tools['shovel'],
     img:images['grass'],
     // position: {x:null,y:null}
 }
 
 export const tileWood = {
-    type: "wood",
+    type: "tileWood",
     tool: tools['axe'],
     img:images['wood'],
  }
 
 export const tileRock = {
-    type: "rock",
+    type: "tileRock",
     tool: tools['pickaxe'],
     img:images['rock'],
 }

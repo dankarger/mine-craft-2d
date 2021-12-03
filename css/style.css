@@ -35,7 +35,8 @@ body {
 /*}*/
 
 .tools-div {
-    width:10%;
+    min-width: 10%;
+    max-width:25%;
     height: 50%;
     background: rgba(24, 24, 26, 0.45);
     border:2px #1e1c1c solid;

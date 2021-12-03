@@ -1,4 +1,4 @@
-import {Tile,tileSky,tileGround,tileGrass} from "./tile.js";
+import {Tile, tileSky, tileGround, tileGrass, tileRock, tileWood} from "./tile.js";
 import {injectCell2, populate} from "./gameboard.js"
 // import {tools} from "./inventory.js";
 
@@ -28,12 +28,12 @@ gameBoard.addEventListener('click',(event)=> {
         if ((tile.dataset.type === "tileGrass"||tile.dataset.type === "tileGround" )&& currentTool.dataset.tool === "shovel") {
             slot1Update(tile)
             playSound("../sounds/round_pop_click.wav")
-           return  replaceTile(tile, tileSky)
+            return replaceTile(tile, tileSky)
         }
         if (tile.dataset.type === "tileWood" && currentTool.dataset.tool === "axe") {
             playSound("../sounds/round_pop_click2.wav")
             slot1Update(tile)
-            return  replaceTile(tile, tileSky)
+            return replaceTile(tile, tileSky)
         }
         if (tile.dataset.type === "tileRock" && currentTool.dataset.tool === "pickaxe") {
             playSound("../sounds/round_pop_click2.wav")
@@ -43,9 +43,7 @@ gameBoard.addEventListener('click',(event)=> {
             if (tile.dataset.type === "tileSky" && currentTool.dataset.tool === "slot1") {
                 if(currentTool.style.background==='white') return
                 playSound("../sounds/short_whoosh1.wav")
-           return   slot1Empty(tile, currentTileinInventory)
-                // console.log('c',currentTileinInventory)
-                // return  replaceTile(tile, currentTileinInventory.dataset.type)
+                return slot1Empty(tile, currentTileinInventory)
         }else{
             playSound("../sounds/melodic1_click.wav")
             wrongTools()
@@ -58,7 +56,7 @@ function replaceTile(tile, target) {
         newTile.position = {x: tile.dataset.positionX, y: tile.dataset.positionY}
         tile.remove(tile)
         injectCell2(newTile);
-    }
+        }
 
 function wrongTools() {
     if(!currentTool)return
@@ -70,27 +68,33 @@ function wrongTools() {
 
 
 
- function slot1Update(tile) {
+function slot1Update(tile) {
     slot1.style.background = tile.style.background
     currentTileinInventory= tile
 }
 function slot1Empty(tile,target) {
-    console.log(target.dataset)
-    let newTile = new Tile(target.dataset.type)
-    newTile.position = {x: tile.dataset.positionX, y: tile.dataset.positionY}
-    tile.remove(tile)
-    injectCell2(newTile);
+    // let newTile = new Tile(target.dataset.type)
+    // newTile.position = {x: tile.dataset.positionX, y: tile.dataset.positionY}
+    // tile.remove(tile)
+    if(target.dataset.type===tileGrass.type) return replaceTile(tile,tileGrass)
+    // injectCell2(newTile);
     slot1.style.background = 'white'
+    if(target.dataset.type===tileGrass.type) return replaceTile(tile,tileGrass)
+    if(target.dataset.type===tileGround.type) return replaceTile(tile,tileGround)
+    if(target.dataset.type===tileRock.type) return replaceTile(tile,tileRock)
+    if(target.dataset.type===tileWood.type) return replaceTile(tile,tileWood)
+
 }
 
 function playSound(sound) {
     let audio = new Audio(sound);
     audio.play();
 }
+
 populate()
 
 // setTimeout(()=>{playSound("../sounds/scnd theme  keyscape 4  monster sleeping.wav")},3000)
 
 
-// TODO: remmove const tools from inventory.sj
+// TODO: remove const tools from inventory.sj
 

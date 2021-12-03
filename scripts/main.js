@@ -32,7 +32,7 @@ gameBoard.addEventListener('click',(event)=> {
             playSound("../sounds/round_pop_click.wav")
             return replaceTile(tile, tileSky)
         }
-        if ((tile.dataset.type === "tileWood" ||tile.dataset.type === "tileBush")  && currentTool.dataset.tool === "axe") {
+        if ((tile.dataset.type === "tileWood" ||tile.dataset.type === "tileBush"||tile.dataset.type === "tileTree")  && currentTool.dataset.tool === "axe") {
             playSound("../sounds/round_pop_click2.wav")
             slot1Update(tile)
             return replaceTile(tile, tileSky)
@@ -44,7 +44,6 @@ gameBoard.addEventListener('click',(event)=> {
         }
             if (tile.dataset.type === "tileSky" && currentTool.dataset.tool === "slot1") {
                 if(currentTool.style.background==='white') return
-
                 return slot1Empty(tile, currentTileinInventory)
         }else{
             playSound("../sounds/melodic1_click.wav")
@@ -76,7 +75,10 @@ function slot1Update(tile) {
 }
 function slot1Empty(tile,target) {
     slot1.style.background = 'transparent'
-    if(currentTileinInventory!=='none') {
+    // let neigbourPosition = [target.dataset.positionX,(parseInt(target.dataset.positionY)+1)]
+    // let bottomNeighbourTile = gameBoard.querySelector(`[data-position-y="${neigbourPosition[1]}"]+[data-position-x="${neigbourPosition[0]}"]`)
+    // console.log(bottomNeighbourTile)
+    if(currentTileinInventory!=='none' ) {
         playSound("../sounds/short_whoosh1.wav")
         if (target.dataset.type === tileGrass.type)   replaceTile(tile, tileGrass)
         if (target.dataset.type === tileGround.type) replaceTile(tile, tileGround)

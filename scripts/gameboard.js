@@ -1,6 +1,7 @@
 import {Tile, tileGrass, tileGround, tileRock, tileSky, tileRockUp,
         tileWood, tileBush,tileTree,tileCloud, tileGold,tileMerchant} from "./tile.js";
 import {replaceTile} from "./main.js";
+import {playSound} from "./sound";
 
 const gameBoard = document.querySelector('#gameBoard');
 
@@ -116,7 +117,8 @@ function createGold(){
 function createMerchant() {
     let random1  =createRandomNumber(20)
     let randomTile = gameBoard.querySelector(`[data-position-x="${random1}"]+[data-position-y="13"]`);
-    setTimeout(()=>{replaceTile(randomTile,tileMerchant)},7000)
+    setTimeout(()=>{replaceTile(randomTile,tileMerchant)},2000)
+    playSound("../sounds/ting.wav")
 }
 export function createRandomNumber(range) {
     return Math.floor(Math.random()*range)

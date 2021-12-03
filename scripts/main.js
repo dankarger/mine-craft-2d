@@ -42,7 +42,7 @@ gameBoard.addEventListener('click',(event)=> {
                 slot1Update(tile)
                 return replaceTile(tile, tileSky)
         }
-            if (tile.dataset.type === "tileSky" && currentTool.dataset.tool === "slot1") {
+            if ((tile.dataset.type === "tileSky" ||tile.dataset.type === "tileMerchant" )&& currentTool.dataset.tool === "slot1") {
                 if(currentTool.style.background==='white') return
                 return slot1Empty(tile, currentTileinInventory)
         }else{
@@ -70,6 +70,7 @@ export function slot1Empty(tile,target) {
     // let bottomNeighbourTile = gameBoard.querySelector(`[data-position-y="${neigbourPosition[1]}"]+[data-position-x="${neigbourPosition[0]}"]`)
     // console.log(bottomNeighbourTile)
     if(currentTileinInventory!=='none' ) {
+        if(target.dataset.type === tileMerchant.type)  return validateTrade(tile)
         playSound("../sounds/short_whoosh1.wav")
         if (target.dataset.type === tileGrass.type)  replaceTile(tile, tileGrass)
         if (target.dataset.type === tileGround.type) replaceTile(tile, tileGround)
@@ -79,11 +80,17 @@ export function slot1Empty(tile,target) {
         if (target.dataset.type === tileBush.type)   replaceTile(tile, tileBush)
         if (target.dataset.type === tileTree.type)   replaceTile(tile, tileTree)
         if (target.dataset.type === tileGold.type)   replaceTile(tile, tileGold)
+        if(target.dataset.type === tileMerchant.type)   validateTrade(tile)
     }
     currentTileinInventory = 'none'
     console.log(currentTileinInventory)
 }
 
+
+function validateTrade(tile) {
+    console.log('validate')
+    if (tile.type === tileGold.type)  console.log('hiihi')
+}
 populate()
 playMusic()
 

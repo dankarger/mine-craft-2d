@@ -10,8 +10,7 @@ export function injectCell2(tile) {
     currentTile.style.gridColumnStart = tile.position.x
     currentTile.dataset.positionX  = tile.position.x
     currentTile.dataset.positionY  = tile.position.y
-    console.log('cuurent',currentTile.dataset)
-    // currentTile.classList.add(`${tile.type}`)
+    currentTile.dataset.type = tile.type
    return gameBoard.appendChild(currentTile)
 }
 

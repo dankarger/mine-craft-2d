@@ -51,7 +51,8 @@ p {
 
 .display-none {
     display: none;
-    transform: scale(0);
-    transition: 700ms ease-in;
-    border-radius: 50%;
+    /*transform: scale(0);*/
+    transform: translateX(300px);
+    /*border-radius: 50%;*/
+    opacity: 0;
 }

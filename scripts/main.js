@@ -14,6 +14,7 @@ const homePage = document.querySelector('#home-page')
 
 // Home-page
 playButton.addEventListener('click',()=>{
+    playSound('../sounds/round_pop_click2.wav')
     homePage.classList.add('display-none')
     populate()
     playMusic()

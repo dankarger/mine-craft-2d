@@ -1,7 +1,7 @@
 import {Tile, tileGrass, tileGround, tileRock, tileSky, tileRockUp,
         tileWood, tileBush,tileTree,tileCloud, tileGold,tileMerchant} from "./tile.js";
 import {replaceTile} from "./main.js";
-import {playSound} from "./sound";
+import {playSound} from "./sound.js";
 
 const gameBoard = document.querySelector('#gameBoard');
 

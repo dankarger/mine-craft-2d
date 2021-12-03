@@ -14,6 +14,7 @@ tooldDiv.addEventListener('click',(event)=> {
     let selectedTool = event.target;
     if(selectedTool!==tooldDiv) {
         currentTool=selectedTool
+        playSound('../sounds/switch.wav')
         toolsList.forEach(tool => tool.classList.remove("selected-tool"))
         slot1.classList.remove("selected-tool")
         selectedTool.classList.toggle('selected-tool')
@@ -65,12 +66,13 @@ export function slot1Update(tile) {
 }
 
 export function slot1Empty(tile,target) {
+    if(tile.dataset.type === tileMerchant.type)  return validateTrade(target)
     slot1.style.background = 'transparent'
     // let neigbourPosition = [target.dataset.positionX,(parseInt(target.dataset.positionY)+1)]
     // let bottomNeighbourTile = gameBoard.querySelector(`[data-position-y="${neigbourPosition[1]}"]+[data-position-x="${neigbourPosition[0]}"]`)
     // console.log(bottomNeighbourTile)
     if(currentTileinInventory!=='none' ) {
-        if(target.dataset.type === tileMerchant.type)  return validateTrade(tile)
+
         playSound("../sounds/short_whoosh1.wav")
         if (target.dataset.type === tileGrass.type)  replaceTile(tile, tileGrass)
         if (target.dataset.type === tileGround.type) replaceTile(tile, tileGround)
@@ -80,7 +82,7 @@ export function slot1Empty(tile,target) {
         if (target.dataset.type === tileBush.type)   replaceTile(tile, tileBush)
         if (target.dataset.type === tileTree.type)   replaceTile(tile, tileTree)
         if (target.dataset.type === tileGold.type)   replaceTile(tile, tileGold)
-        if(target.dataset.type === tileMerchant.type)   validateTrade(tile)
+        // if(target.dataset.type === tileMerchant.type)   validateTrade(tile)
     }
     currentTileinInventory = 'none'
     console.log(currentTileinInventory)
@@ -88,8 +90,15 @@ export function slot1Empty(tile,target) {
 
 
 function validateTrade(tile) {
-    console.log('validate')
-    if (tile.type === tileGold.type)  console.log('hiihi')
+    console.log(tile.type)
+
+    if (tile.dataset.type === tileGold.type) {
+     return  playSound('../sounds/cash.wav')
+
+
+    }else{
+       return playSound('../sounds/electric_alert.wav')
+    }
 }
 populate()
 playMusic()

@@ -1,5 +1,8 @@
 import {currentTool,currentTileinInventory} from "./main.js";
+
+
 export let slot1 = document.querySelector('.slot1')
+
 // export let currentTool
 // export let currentTileinInventory='none'
 export const tools = {

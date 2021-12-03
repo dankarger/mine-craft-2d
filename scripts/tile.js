@@ -11,6 +11,7 @@ const images = {
     cloud:"url('../images/cloud.png')",
     tree:"url('../images/tree.png')",
     bush:"url('../images/bush.png')",
+    merchant:"url('../images/man.png')",
 
 }
 
@@ -78,4 +79,9 @@ export const tileGold = {
     type: "tileGold",
     tool: tools['pickaxe'],
     img:images['gold'],
+}
+export const tileMerchant = {
+    type: "tileMerchant",
+    tool: 'none',
+    img:images['merchant'],
 }

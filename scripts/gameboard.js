@@ -1,5 +1,5 @@
 import {Tile, tileGrass, tileGround, tileRock, tileSky, tileRockUp,
-        tileWood, tileBush,tileTree,tileCloud, tileGold} from "./tile.js";
+        tileWood, tileBush,tileTree,tileCloud, tileGold,tileMerchant} from "./tile.js";
 import {replaceTile} from "./main.js";
 
 const gameBoard = document.querySelector('#gameBoard');
@@ -36,6 +36,7 @@ export function populate() {
     createTree()
     creatClouds()
     createGold()
+    createMerchant()
 }
 
 function selectBottomRowSkyTile(){
@@ -109,8 +110,14 @@ function createGold(){
     let  random2 =20-createRandomNumber(4)
     let randomTile = gameBoard.querySelector(`[data-position-x="${random1}"]+[data-position-y="${random2}"]`)
     replaceTile(randomTile,tileGold)
+
 }
 
+function createMerchant() {
+    let random1  =createRandomNumber(20)
+    let randomTile = gameBoard.querySelector(`[data-position-x="${random1}"]+[data-position-y="13"]`);
+    setTimeout(()=>{replaceTile(randomTile,tileMerchant)},7000)
+}
 export function createRandomNumber(range) {
     return Math.floor(Math.random()*range)
 }

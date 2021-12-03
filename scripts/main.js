@@ -1,5 +1,5 @@
 import {Tile, tileSky, tileGround, tileGrass, tileRock,
-        tileWood, tileRockUp, tileBush,tileTree,tileCloud,tileGold} from "./tile.js";
+        tileWood, tileRockUp, tileBush,tileTree,tileCloud,tileGold,tileMerchant} from "./tile.js";
 import {createRandomNumber, injectCell2, populate} from "./gameboard.js"
 import {playMusic, playSound} from "./sound.js";
 import {wrongTools, slot1 } from "./inventory.js";

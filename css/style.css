@@ -4,12 +4,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin:0;
-    background-color: rgba(37, 37, 38, 0.66);
-}
+    margin: 0;
+    /*background-color: rgba(37, 37, 38, 0.66);*/
+    background-color: rgba(0, 0, 0, 0.85);
 
+}
 #gameBoard {
-    /*background-color: cadetblue;*/
     border:1px black solid;
     width:100vmin;
     height:94vmin;
@@ -17,22 +17,7 @@ body {
     display: grid;
     grid-template-rows: repeat(20,1fr);
     grid-template-columns: repeat(20,1fr);
-
 }
-
-
-/*.ground {*/
-/*    width:100%;*/
-/*    height:100%;*/
-/*    background: url('../images/ground.jpg') no-repeat center center/cover;*/
-
-/*}*/
-/*.grass {*/
-/*    width:100%;*/
-/*    height:100%;*/
-/*    background: url('../images/grass.jpg') no-repeat center center/cover;*/
-
-/*}*/
 
 .tools-div {
     width: 10vmin;
@@ -47,7 +32,6 @@ body {
     flex-direction: column;
     padding:0.5rem 0.5rem;
     margin-left:1rem;
-
 }
 .tools:hover {
     transform: scale(1.041);
@@ -73,8 +57,6 @@ body {
     top:0;
     left:0;
     background: rgba(255, 215, 0, 0.35);
-
-
 }
 
 .tools {
@@ -87,7 +69,6 @@ body {
     width:2rem ;
     height: 3rem;
     border: 3px whitesmoke solid;
-    /*background: rgba(255, 255, 255, 0.85);*/
     background: transparent;
     margin-top:1rem;
 
@@ -107,9 +88,11 @@ body {
 
 
 /*Music player*/
-audio{
+
+audio {
     max-width:200px;
     max-height:200px;
+
 
 }
 #audio-div {
@@ -130,12 +113,10 @@ audio{
     }
    20%{
        background: red;
-       /*filter: brightness(30%);*/
        opacity: 0.7;
    }
     80%{
         background: red;
-        /*filter: brightness(30%);*/
         opacity: 0.4;
     }
 

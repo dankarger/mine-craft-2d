@@ -11,6 +11,7 @@ const images = {
     cloud:"url('../images/cloud.png')",
     tree:"url('../images/tree.png')",
     bush:"url('../images/bush.png')",
+
 }
 
 export class Tile {
@@ -65,4 +66,10 @@ export const tileTree = {
     type: "tileTree",
     tool: tools['axe'],
     img:images['tree'],
+}
+
+export const tileCloud = {
+    type: "tileCloud",
+    tool: 'none',
+    img:images['cloud'],
 }

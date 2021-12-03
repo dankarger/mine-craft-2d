@@ -1,4 +1,4 @@
-import {Tile, tileSky, tileGround, tileGrass, tileRock, tileWood, tileRockUp} from "./tile.js";
+import {Tile, tileSky, tileGround, tileGrass, tileRock, tileWood, tileRockUp, tileBush,tileTree} from "./tile.js";
 import {injectCell2, populate} from "./gameboard.js"
 // import {tools} from "./inventory.js";
 
@@ -8,7 +8,7 @@ const tooldDiv = document.querySelector('.tools-div')
 const slot1 = document.querySelector('.slot1')
 const body = document.querySelector('body')
 let currentTool
-let currentTileinInventory
+let currentTileinInventory='none'
 
 
 
@@ -32,7 +32,7 @@ gameBoard.addEventListener('click',(event)=> {
             playSound("../sounds/round_pop_click.wav")
             return replaceTile(tile, tileSky)
         }
-        if (tile.dataset.type === "tileWood" && currentTool.dataset.tool === "axe") {
+        if ((tile.dataset.type === "tileWood" ||tile.dataset.type === "tileBush")  && currentTool.dataset.tool === "axe") {
             playSound("../sounds/round_pop_click2.wav")
             slot1Update(tile)
             return replaceTile(tile, tileSky)
@@ -83,6 +83,7 @@ function slot1Empty(tile,target) {
         if (target.dataset.type === tileRock.type) replaceTile(tile, tileRock)
         if (target.dataset.type === tileRockUp.type) replaceTile(tile, tileRockUp)
         if (target.dataset.type === tileWood.type)  replaceTile(tile, tileWood)
+        if (target.dataset.type === tileBush.type)  replaceTile(tile, tileBush)
     }
 
      currentTileinInventory = 'none'

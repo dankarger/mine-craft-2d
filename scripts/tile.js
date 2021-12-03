@@ -4,12 +4,13 @@ const images = {
     ground:"url('../images/ground.jpg')",
     sky:"url('../images/sky.png')",
     grass:"url('../images/grass.png')",
-    wood:"url('../images/wood.png')",
+    wood:"url('../images/wood2.png')",
     rock:"url('../images/rock.png')",
     rockUp:"url('../images/rock3.png')",
     gold:"url('../images/gold.png')",
     cloud:"url('../images/cloud.png')",
-    tree:"url('../images/tree.png')"
+    tree:"url('../images/tree.png')",
+    bush:"url('../images/bush.png')",
 }
 
 export class Tile {
@@ -53,4 +54,15 @@ export const tileRockUp = {
     type: "tileRockUp",
     tool: tools['pickaxe'],
     img:images['rockUp'],
+}
+export const tileBush = {
+    type: "tileBush",
+    tool: tools['shovel'],
+    img:images['bush'],
+}
+
+export const tileTree = {
+    type: "tileTree",
+    tool: tools['axe'],
+    img:images['tree'],
 }

@@ -81,15 +81,16 @@ body {
 .tools {
     min-width:90%;
     height: 30%;
-    border:3px solid #0e0e0e;
+    border:3px solid #d0c7c7;
     background: #484343;
 }
 .slot1 {
     width:2rem ;
     height: 3rem;
-    border: 8px whitesmoke solid;
+    border: 3px whitesmoke solid;
     /*background: rgba(255, 255, 255, 0.85);*/
     background: transparent;
+    margin-top:1rem;
 
 }
 .shovel {

@@ -104,7 +104,7 @@ function creatClouds() {
 }
 
 export function createGold(){
-    let random1  =createRandomNumber(17)+1
+    let random1  =createRandomNumber(17)+2
     let  random2 =18-createRandomNumber(4)
     let randomTile = gameBoard.querySelector(`[data-position-x="${random1}"]+[data-position-y="${random2}"]`)
     replaceTile(randomTile,tileGold)
@@ -112,16 +112,12 @@ export function createGold(){
 }
 
  export function createMerchant() {
-    let random1  =createRandomNumber(17)+1
+    let random1  =createRandomNumber(17)+2
     let randomTile = gameBoard.querySelector(`[data-position-x="${random1}"]+[data-position-y="13"]`);
-    // if (randomTile.dataset.type!==tileSky.type) return createMerchant()
-     console.log(randomTile)
     setTimeout(()=>{
-        console.log('g',randomTile)
         replaceTile(randomTile,tileMerchant)
         playSound("../sounds/melodic5_affirm.wav")
     },7000)
-
 }
 
 export function createRandomNumber(range) {

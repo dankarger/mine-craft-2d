@@ -54,7 +54,7 @@ h3 {
     font-weight: 600;
     margin:1rem 1.5rem;
 }
-.tools-div {
+.tools-div ,.draw-mode-tools{
     flex-direction: row;
     min-height: 50px;
     min-width:90%;
@@ -70,7 +70,7 @@ h3 {
     align-items: start;
 }
 
-.tools {
+.tools ,.tools-draw{
     min-width:50px;
     width:100px;
     height: 70px;
@@ -119,5 +119,13 @@ audio {
     display: flex;
     bottom:1rem;
     right: 1rem;
+
+}
+
+/*Draw mode*/
+.draw-mode-tools {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }

@@ -1,15 +1,16 @@
 #home-page {
-    width:100vw;
-    height:100vh;
+    min-width:100%;
+    min-height:100%;
     position:absolute;
     top:0;
     left:0;
-    background: url("../images/home1.jpg") no-repeat center center/contain;
-
+    /*background: url("../images/home1.jpg") no-repeat center center/contain;*/
+    background: url("../images/home4.png") no-repeat center center/cover;
     background-color: black;
+
     display: flex;
-    justify-content: start;
-    align-items: center;
+    justify-content: left;
+    align-items: flex-start;
     flex-direction: column;
     z-index: 100;
     padding-top: 5%;
@@ -18,5 +19,5 @@
 
 .button-play {
 margin-top:2rem;
-
+margin-left: 5%;
 }

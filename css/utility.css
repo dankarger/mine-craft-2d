@@ -12,8 +12,8 @@ audio {
     display: flex;
     justify-content: right;
     position: absolute;
-    top:1px;
-    right: 0;
+    top:1rem;
+    right: 1rem;
 
 }
 button {
@@ -35,12 +35,12 @@ hr {
 }
 
 h3 {
-    font-size: 3rem;
+    font-size: calc(1rem  + 2vw );
     font-weight: 600;
 }
 
 h4 {
-    font-size: 1.5rem;
+    font-size: calc(0.8rem  + 1vw );
     font-weight: 400;
 }
 
@@ -51,8 +51,8 @@ p {
 
 .display-none {
     display: none;
-    /*transform: scale(0);*/
-    transform: translateX(300px);
+    transform: scale(0);
+    /*transform: translateX(300px);*/
     /*border-radius: 50%;*/
     opacity: 0;
 }

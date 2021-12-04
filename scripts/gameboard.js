@@ -101,7 +101,7 @@ function creatClouds() {
 }
 
 function createGold(){
-    let random1  =createRandomNumber(20)
+    let random1  =createRandomNumber(19)
     let  random2 =20-createRandomNumber(4)
     let randomTile = gameBoard.querySelector(`[data-position-x="${random1}"]+[data-position-y="${random2}"]`)
     replaceTile(randomTile,tileGold)

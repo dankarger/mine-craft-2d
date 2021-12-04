@@ -7,9 +7,10 @@ body {
     align-items: center;
     margin: 0;
     font-family: 'Fuzzy Bubbles', cursive;
+    font-size: 100%;
     background-color: rgba(0, 0, 0, 0.85);
     background: rgb(227,143,102);
-    background: linear-gradient(95deg, rgba(227,143,102,1) 0%, rgba(7,64,45,1) 0%, rgba(0,0,0,1) 26%, rgba(1,1,1,1) 75%, rgba(25,21,54,1) 89%);
+    background: linear-gradient(95deg, rgba(227,143,102,1) 0%, rgba(48,61,57,1) 0%, rgba(0,0,0,1) 51%, rgba(1,1,1,1) 75%, rgba(5,3,25,1) 90%);
 }
 
 #main {
@@ -17,7 +18,7 @@ body {
 }
 
 #gameBoard {
-    border:1px black solid;
+    border:5px #000000 solid;
     width:100vmin;
     height:94vmin;
 

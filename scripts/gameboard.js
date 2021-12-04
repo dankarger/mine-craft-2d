@@ -114,6 +114,8 @@ export function createGold(){
  export function createMerchant() {
     let random1  =createRandomNumber(17)+2
     let randomTile = gameBoard.querySelector(`[data-position-x="${random1}"]+[data-position-y="13"]`);
+    console.log(randomTile)
+     console.log('fffff')
     setTimeout(()=>{
         replaceTile(randomTile,tileMerchant)
         playSound("../sounds/melodic5_affirm.wav")

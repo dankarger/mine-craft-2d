@@ -139,7 +139,6 @@ function validateTrade(tile,merchant) {
 function updateScore (){
     const scoreBoard = document.querySelector('.score')
     scoreBoard.innerHTML = `$ ${score}`
-
 }
 
 export  function drawModeEnd() {

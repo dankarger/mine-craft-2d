@@ -13,11 +13,13 @@ with several mechanics:
 - Draw mode - a mode that enable placing tiles on the game-board without harvesting them first.
 - Score mechanic .
 - Merchant mechanic- the merchant and the gold tile appear randomly, the player can sell him the gold tile.
-- Sound and music - sound effects on interactions, and background music .
+- Sound and music - sound effects on interactions, and background music with an audio controller.
 - Responsive to mobile.
+
+I used 
 
 Music used:
 - Sweden - Minecraft [Piano Tutorial] (Synthesia) // Torby Brand
   by Marioverehrer on YouTube:
         https://www.youtube.com/watch?v=7jFJbp8rYDA
-- Untitled -   music I made for another project.
+- Untitled - a piece I made for another project.

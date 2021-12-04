@@ -8,8 +8,6 @@ const playList = [
     "./sounds/scnd_theme.mp3"
 ]
 
-
-
 export function playSound(sound) {
     let audio = new Audio(sound);
     audio.play();

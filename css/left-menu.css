@@ -8,8 +8,9 @@
     flex-direction: column;
     border:3px solid #b7b0b0;
     border-radius: 5%;
-
     transition: 4s ease-in;
+    opacity: 0;
+    animation: fade-in 8s forwards ease-in-out;
 }
 .header-container {
     display: flex;
@@ -73,4 +74,11 @@
 
     }
 
+}
+
+
+@keyframes fade-in {
+    to {
+        opacity: 1;
+    }
 }

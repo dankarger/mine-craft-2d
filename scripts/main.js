@@ -111,16 +111,16 @@ function validateTrade(tile) {
         currentTileinInventory='none'
         slot1.style.background = 'transparent'
         score+=100;
-     return  playSound('../sounds/cash.wav')
+        updateScore()
+        return  playSound('../sounds/cash.wav')
     }else{
        return playSound('../sounds/electric_alert.wav')
     }
 }
 
 function updateScore (){
-    console.log('updata')
     const scoreBoard = document.querySelector('.score')
-    scoreBoard.innerHTML = score
+    scoreBoard.innerHTML = `$ ${score}`
 
 }
 

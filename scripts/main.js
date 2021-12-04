@@ -11,12 +11,13 @@ const tooldDiv = document.querySelector('.tools-div')
 const body = document.querySelector('body')
 const playButton = document.querySelector('.play-button')
 const homePage = document.querySelector('#home-page')
-
+let score = 0;
 // Home-page
 playButton.addEventListener('click',()=>{
     playSound('../sounds/round_pop_click2.wav')
     homePage.classList.add('display-none')
     populate()
+    updateScore()
     playMusic()
 })
 
@@ -41,25 +42,15 @@ gameBoard.addEventListener('click',(event)=> {
     if (event.target !== gameBoard) {
         if ((tile.dataset.type === "tileGrass"||tile.dataset.type === "tileGround" )
               && currentTool.dataset.tool === "shovel") {
-                // slot1Update(tile)
-                // playSound("../sounds/round_pop_click.wav")
-                // return replaceTile(tile, tileSky)
             return toolAction(tile,"../sounds/round_pop_click.wav")
         }
         if ((tile.dataset.type === "tileWood" ||tile.dataset.type === "tileBush"||tile.dataset.type === "tileTree")
             && currentTool.dataset.tool === "axe") {
-                // playSound("../sounds/round_pop_click2.wav")
-                // slot1Update(tile)
-                // return replaceTile(tile, tileSky)
                  return toolAction(tile,"../sounds/round_pop_click2.wav")
         }
         if ((tile.dataset.type === "tileRock" || tile.dataset.type === "tileRockUp"||tile.dataset.type  === 'tileGold')
             && currentTool.dataset.tool === "pickaxe") {
-                // playSound("../sounds/round_pop_click2.wav")
-                // slot1Update(tile)
-                // return replaceTile(tile, tileSky)
                 return toolAction(tile,"../sounds/round_pop_click2.wav")
-
         }
             if ((tile.dataset.type === "tileSky" ||tile.dataset.type === "tileMerchant" )&& currentTool.dataset.tool === "slot1") {
                 if(currentTool.style.background==='white') return
@@ -86,6 +77,14 @@ export function replaceTile(tile, target) {
 export function slot1Update(tile) {
     slot1.style.background = tile.style.background
     currentTileinInventory= tile
+    if(tile.dataset.type==='tileGold') score+=50;
+    if(tile.dataset.type==='tileRock'||tile.dataset.type==='tileRockUp' ) score+=3;
+    if(tile.dataset.type==='tileGrass' ||tile.dataset.type==='tileGrass'
+                            ||tile.dataset.type==='tileWood' ) score+=2;
+    if(tile.dataset.type==='tileGround') score+=1;
+    if(tile.dataset.type==='tileGrass' ||tile.dataset.type==='tileGrass'||tile.dataset.type==='tileWood' ) score+=2;
+        console.log('score:',score)
+    updateScore()
 }
 
 export function slot1Empty(tile,target) {
@@ -111,14 +110,21 @@ function validateTrade(tile) {
     if (tile.dataset.type === tileGold.type) {
         currentTileinInventory='none'
         slot1.style.background = 'transparent'
+        score+=100;
      return  playSound('../sounds/cash.wav')
     }else{
        return playSound('../sounds/electric_alert.wav')
     }
 }
-//
-// populate()
-// playMusic()
+
+function updateScore (){
+    console.log('updata')
+    const scoreBoard = document.querySelector('.score')
+    scoreBoard.innerHTML = score
+
+}
+
+
 
 // TODO: remove const tools from inventory.sj
 // TODO:change sounds

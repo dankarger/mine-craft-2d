@@ -27,3 +27,13 @@ body {
     grid-template-columns: repeat(20,1fr);
 }
 
+.score {
+    width:100%;
+    height:100%;
+    color: #a93434;
+    font-size: 2rem;
+    position: absolute;
+    top: 2rem;
+    right:1rem
+}
+

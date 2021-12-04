@@ -10,7 +10,7 @@ const images = {
     gold:"url('../images/gold.png')",
     cloud:"url('../images/cloud.png')",
     tree:"url('../images/tree.png')",
-    bush:"url('../images/bush.png')",
+    bush:"url('../images/bush3.png')",
     merchant:"url('../images/man.png')",
 }
 

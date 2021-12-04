@@ -43,7 +43,7 @@ export function populate() {
 
 function selectBottomRowSkyTile(){
     let bottomRowSkyTiles = gameBoard.querySelectorAll('[data-position-y="13"]')
-    let randomIndex = createRandomNumber(20)
+    let randomIndex = createRandomNumber(18)+1
     let offset = createRandomNumber(3)
     return [bottomRowSkyTiles,randomIndex,offset]
 }
@@ -61,7 +61,7 @@ function createBush() {
 
 function createTree() {
     const bottomRowSkyTiles = gameBoard.querySelectorAll('[data-position-y="13"]')
-    const randomIndex = Math.floor(Math.random() *15 +1)
+    const randomIndex = createRandomNumber(15)+1
     const positionX = bottomRowSkyTiles[randomIndex].dataset.positionX
     if (bottomRowSkyTiles[randomIndex].dataset.type !== 'tileSky') return  createTree()
     replaceTile(bottomRowSkyTiles[randomIndex], tileWood)
@@ -102,15 +102,15 @@ function creatClouds() {
 }
 
 function createGold(){
-    let random1  =createRandomNumber(19)
-    let  random2 =19-createRandomNumber(4)
+    let random1  =createRandomNumber(17)
+    let  random2 =18-createRandomNumber(4)
     let randomTile = gameBoard.querySelector(`[data-position-x="${random1}"]+[data-position-y="${random2}"]`)
     replaceTile(randomTile,tileGold)
 
 }
 
 function createMerchant() {
-    let random1  =createRandomNumber(20)
+    let random1  =createRandomNumber(17)
     let randomTile = gameBoard.querySelector(`[data-position-x="${random1}"]+[data-position-y="13"]`);
     setTimeout(()=>{
         replaceTile(randomTile,tileMerchant)

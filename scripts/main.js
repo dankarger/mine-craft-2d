@@ -80,7 +80,7 @@ export function slot1Update(tile) {
     if(tile.dataset.type==='tileGold') score+=50;
     if(tile.dataset.type==='tileRock'||tile.dataset.type==='tileRockUp' ) score+=3;
     if(tile.dataset.type==='tileGrass' ||tile.dataset.type==='tileGrass'
-                            ||tile.dataset.type==='tileWood' ) score+=2;
+                            ||tile.dataset.type==='tileWood'|| tile.dataset.type==='tileTree') score+=2;
     if(tile.dataset.type==='tileGround') score+=1;
     if(tile.dataset.type==='tileGrass' ||tile.dataset.type==='tileGrass'||tile.dataset.type==='tileWood' ) score+=2;
     updateScore()

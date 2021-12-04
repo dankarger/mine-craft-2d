@@ -21,12 +21,23 @@
     <link rel="stylesheet" href="./css/left-menu.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/home-page.css">
+    <link rel="stylesheet" href="./css/mobile.css">
 </head>
 <body>
 <div id="home-page">
-    <div class="title"><img src="./images/title.png" alt="title-img"></div>
-    <div class="button-play">
-       <button class="play-button"><img src="./images/button-play.png" alt="play-button-img"></button>
+    <div class="title">
+<!--        <img src="./images/title-transparent.png" alt="title-img">-->
+    </div>
+    <div class="buttons-div">
+       <button class="play-button">
+           <span>Play </span>
+       </button>
+        <button class="draw-button">
+            <span>Draw Mode</span>
+        </button>
+        <button class="scores-button">
+            <span>High Scores</span>
+        </button>
     </div>
 </div>
 <div class="left-menu ">
@@ -55,7 +66,7 @@
 </div>
 <div  id="audio-div">
     <audio id="music-player" controls>
-        <source src="sounds/music.mp3" type="audio/ogg">
+        <source src="sounds/music2.mp3" type="audio/ogg">
         <source src="./sounds/scnd_theme_monster_sleeping.wav" type="audio/wav">
         Your browser does not support the audio element.
     </audio>

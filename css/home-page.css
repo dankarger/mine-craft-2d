@@ -16,6 +16,7 @@
     opacity: 0;
     animation: fade-in 1s forwards   ease-in-out;
 }
+
 #home-page .title {
     margin-top:2%;
 }
@@ -25,9 +26,10 @@
     width:100%;
     height: auto;
 
-
 }
+
 /* animations */
+
 @keyframes fade-in {
     to {
         opacity: 1;

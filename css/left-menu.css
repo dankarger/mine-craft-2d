@@ -1,7 +1,6 @@
 .left-menu {
     width:30%;
     min-width:200px;
-    /*margin-top:2rem;*/
     display: flex;
     align-self: start;
     align-items: center;
@@ -14,8 +13,6 @@
     background: rgba(14, 22, 31, 0.62);
     margin-top:10rem;
 }
-
-
 
 .left-menu .title img{
     width: 70%;
@@ -49,7 +46,6 @@
     border-radius: 8%;
 
 }
-
 
 @keyframes title-animation {
     0%{

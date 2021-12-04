@@ -41,15 +41,15 @@ gameBoard.addEventListener('click',(event)=> {
     let tile = event.target;
     if (event.target !== gameBoard) {
         if ((tile.dataset.type === "tileGrass"||tile.dataset.type === "tileGround" )
-              && currentTool.dataset.tool === "shovel") {
+              && currentTool.dataset.tool === tileGround.tool) {
             return toolAction(tile,"../sounds/round_pop_click.wav")
         }
         if ((tile.dataset.type === "tileWood" ||tile.dataset.type === "tileBush"||tile.dataset.type === "tileTree")
-            && currentTool.dataset.tool === "axe") {
+            && currentTool.dataset.tool === tileWood.tool) {
                  return toolAction(tile,"../sounds/round_pop_click2.wav")
         }
         if ((tile.dataset.type === "tileRock" || tile.dataset.type === "tileRockUp"||tile.dataset.type  === 'tileGold')
-            && currentTool.dataset.tool === "pickaxe") {
+            && currentTool.dataset.tool === tileRock.tool) {
                 return toolAction(tile,"../sounds/round_pop_click2.wav")
         }
             if ((tile.dataset.type === "tileSky" ||tile.dataset.type === "tileMerchant" )&& currentTool.dataset.tool === "slot1") {
@@ -83,7 +83,6 @@ export function slot1Update(tile) {
                             ||tile.dataset.type==='tileWood' ) score+=2;
     if(tile.dataset.type==='tileGround') score+=1;
     if(tile.dataset.type==='tileGrass' ||tile.dataset.type==='tileGrass'||tile.dataset.type==='tileWood' ) score+=2;
-        console.log('score:',score)
     updateScore()
 }
 

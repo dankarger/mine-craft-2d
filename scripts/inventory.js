@@ -1,14 +1,9 @@
 import {currentTool,currentTileinInventory} from "./main.js";
 export let slot1 = document.querySelector('.slot1')
 export const tools = {
-    shovel:{name:'shovel',
-            img:'../images/shovel.jpg'
-                },
-    axe:{name:"axe",
-    img:'../images/axe2.jpg'},
-    pickaxe:{name:"pickaxe",
-            img:'../images/pickaxe2.jpg\'}'
-    }
+    shovel:'shovel',
+    axe:"axe",
+    pickaxe:"pickaxe"
 }
 
 export function wrongTools() {

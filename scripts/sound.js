@@ -5,7 +5,7 @@ const audioObject = document.querySelector('#music-player')
 
 const playList = [
     "./sounds/music2.mp3",
-    "./sounds/scnd_theme.wav"
+    "./sounds/scnd_theme.mp3"
 ]
 
 

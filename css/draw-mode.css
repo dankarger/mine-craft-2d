@@ -20,6 +20,8 @@
     box-shadow: 2px 2px 25px rgba(91, 87, 87, 0.67);
     transition: 200ms ease-in-out;
     animation: play-button-animation 5s infinite alternate ease-in-out;
+
+    z-index: 100;
 }
 
 .play-button-in-draw-mode:hover {

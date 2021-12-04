@@ -25,7 +25,6 @@ export function playMusic() {
 
 function randomizePlayList(tracks) {
     let randomNumber = createRandomNumber(2)
-    console.log('r',randomNumber)
       randomNumber<1
         ? audioObject.innerHTML=`  <source  class="track1" src="${playList[0]}" type="audio/ogg" data-track-number="1">
          <source class="track2"  src="${playList[1]}" type="audio/wav" data-track-number="2">
@@ -37,6 +36,8 @@ function randomizePlayList(tracks) {
 }
 audioObject.addEventListener('ended',function(){
     const track2 = document.querySelector(".track2")
+    const track1 = document.querySelector(".track1")
+    randomizePlayList(playList)
+    return audioObject.play()
 
-    track2.play()
 });

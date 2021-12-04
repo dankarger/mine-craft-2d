@@ -12,11 +12,14 @@
     left:0;
     color:white;
     font-size:3rem;
-    border: 3px solid white;
+    border: 3px solid var(--color-red);
     border-radius: 20px;
     background: rgba(213, 205, 205, 0.4);
     padding:0.5rem 0.3rem;
     cursor: pointer;
+    box-shadow: 2px 2px 25px rgba(91, 87, 87, 0.67);
+    transition: 200ms ease-in-out;
+    animation: play-button-animation 5s infinite alternate ease-in-out;
 }
 
 .play-button-in-draw-mode:hover {
@@ -46,4 +49,25 @@
 
 .draw-mode-text strong {
     color:var(--color-red)
+}
+
+@keyframes play-button-animation {
+    10% {
+        transform: scale(1.07,1);
+    }
+    /*25% {*/
+    /*    transform: scale(1.15,0.9);*/
+    /*}*/
+    45% {
+        transform: scale(1,1);
+    }
+    55%{
+        transform: scale(0.86,1);
+    }
+    85% {
+        transform: scale(1.1,0.78);
+    }
+    95% {
+        transform: scale(1,1);
+    }
 }

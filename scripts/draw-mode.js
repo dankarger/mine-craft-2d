@@ -3,8 +3,6 @@ import {currentTool,replaceTile, drawModeEnd} from "./main.js";
 import {Tile,tileGrass,tileGround,tileSky,tileRockUp} from "./tile.js";
 import {playSound} from "./sound.js";
 
-
-
 const drawModeTools = document.querySelector('.draw-mode-tools')
 const tools = document.querySelectorAll('.tools')
 const slot1 = document.querySelector('.slot1')
@@ -20,11 +18,10 @@ const tilesList = {
 }
 
 playButton.addEventListener('click',()=>{
-
     drawModeActivate()
     drawModeEnd()
-
 })
+
 export function  drawModeActivate() {
         tools.forEach(tool=>{
             tool.classList.toggle('draw-mode-off');
@@ -41,6 +38,6 @@ export function drawModeInjectTile(tile) {
     let currentToolTile = tilesList[currentTool.dataset.tool]
     replaceTile(tile,currentToolTile)
     playSound('../sounds/round_pop_click2.wav')
-    console.log(currentToolTile)
+
 }
 

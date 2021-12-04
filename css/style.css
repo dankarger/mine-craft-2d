@@ -43,6 +43,8 @@ body {
     border: 4px #a93434 solid;
     border-radius: 20px;
     background: rgba(0, 0, 0, 0.15);
+    white-space: nowrap;
+    box-shadow: 1px 1px 25px rgba(91, 87, 87, 0.67);
 
 }
 

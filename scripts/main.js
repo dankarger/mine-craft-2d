@@ -127,7 +127,7 @@ function validateTrade(tile,merchant) {
         slot1.style.background = 'transparent'
         score+=100;
         updateScore()
-         replaceTile(merchant, tileSky)
+        replaceTile(merchant, tileSky)
         createMerchant()
         createGold()
         return  playSound('../sounds/cash.wav')
@@ -148,5 +148,3 @@ export  function drawModeEnd() {
     createMerchant()
     playMusic()
 }
-// TODO: remove const tools from inventory.sj
-// TODO:change sounds

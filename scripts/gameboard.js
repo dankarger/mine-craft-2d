@@ -112,15 +112,18 @@ export function createGold(){
 }
 
  export function createMerchant() {
-    let random1  =createRandomNumber(18)+1
+    let random1  =createRandomNumber(17)+1
     let randomTile = gameBoard.querySelector(`[data-position-x="${random1}"]+[data-position-y="13"]`);
     // if (randomTile.dataset.type!==tileSky.type) return createMerchant()
+     console.log(randomTile)
     setTimeout(()=>{
+        console.log('g',randomTile)
         replaceTile(randomTile,tileMerchant)
         playSound("../sounds/melodic5_affirm.wav")
     },7000)
 
 }
+
 export function createRandomNumber(range) {
     return Math.floor(Math.random()*range)
 }

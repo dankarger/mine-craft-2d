@@ -111,7 +111,7 @@ function createGold(){
 }
 
 function createMerchant() {
-    let random1  =createRandomNumber(16)+1
+    let random1  =createRandomNumber(19)+1
     let randomTile = gameBoard.querySelector(`[data-position-x="${random1}"]+[data-position-y="13"]`);
     if (randomTile.dataset.type!==tileSky.type) return createMerchant()
     setTimeout(()=>{

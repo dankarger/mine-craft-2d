@@ -9,7 +9,7 @@
 body {
     flex-direction: column-reverse;
     /*overflow-y: scroll;*/
-    overflow: visible;
+    /*overflow: visible;*/
     justify-content: space-between;
     /*width:100vw;*/
     /*height:100vh;*/
@@ -21,7 +21,7 @@ body {
 #gameBoard {
 
     width:100vmin;
-    height:60vmin;
+    height:80vmin;
     top:100vh
     /*bottom: 50%;*/
 }
@@ -46,6 +46,7 @@ body {
     width:100%;
     margin-top:10rem;
     font-size:2rem;
+    text-align: center;
 }
 
 h4 {

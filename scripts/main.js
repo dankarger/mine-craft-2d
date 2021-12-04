@@ -12,6 +12,7 @@ const body = document.querySelector('body')
 const playButton = document.querySelector('.play-button')
 const homePage = document.querySelector('#home-page')
 let score = 0;
+
 // Home-page
 playButton.addEventListener('click',()=>{
     playSound('../sounds/round_pop_click2.wav')
@@ -77,12 +78,12 @@ export function replaceTile(tile, target) {
 export function slot1Update(tile) {
     slot1.style.background = tile.style.background
     currentTileinInventory= tile
-    if(tile.dataset.type==='tileGold') score+=50;
-    if(tile.dataset.type==='tileRock'||tile.dataset.type==='tileRockUp' ) score+=3;
-    if(tile.dataset.type==='tileGrass' ||tile.dataset.type==='tileGrass'
-                            ||tile.dataset.type==='tileWood'|| tile.dataset.type==='tileTree') score+=2;
-    if(tile.dataset.type==='tileGround') score+=1;
-    if(tile.dataset.type==='tileGrass' ||tile.dataset.type==='tileGrass'||tile.dataset.type==='tileWood' ) score+=2;
+    if(tile.dataset.type===tileGold.type) score+=50;
+    if(tile.dataset.type===tileRock.type||tile.dataset.type===tileRockUp.type ) score+=3;
+    if(tile.dataset.type===tileGrass.type||tile.dataset.type===tileGrass.type
+                            ||tile.dataset.type===tileWood.type|| tile.dataset.type===tileTree.type) score+=2;
+    if(tile.dataset.type===tileGround.type) score+=1;
+    if(tile.dataset.type===tileGround.type ||tile.dataset.type===tileGrass.type||tile.dataset.type===tileWood.type ) score+=2;
     updateScore()
 }
 

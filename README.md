@@ -1,67 +1,17 @@
 # Mine-craft 2d
-## weekend assigment - 
-## part of "AppleSeed" fullstack bootcamp
 
+## Exercise in HTML,CSS, JavaScript
+### part of "AppleSeed" fullstack bootcamp
 
-
-steps :
-- 
-
-
-e
-30
-
-HTML בסיסי כולל מילות מפתח, קישור קבצים, דיבים בסיסיים
-30
-
-CSS בסיסי + העלאה ל netlify
-30
-
-הקמת משתנים גלובליים - מטריצה, טקסטורות,  כלים, מחסן (ENUM)
-האם צריך משתנה שאומר איזה כלי / אריח מהמחסן בחרתי?
-30
-
-פונקציית ציור מטריצה (עולם ראשוני) עד שיש תוצאה על המסך
-90
-
-
-
-
-פונקציית חציבה (כלי, אריח שמנסים לשבור) => עדכון המטריצה והלוח, הכנסה למחסן
-90
-
-הרחבה לכלים שונים ובדיקה (כולל צבע אדום)
-60
-
-ריפקטור
-60
-
-שימוש באריח מהמחסן
-90
-
-דף כניסה
-45
-
-כפתור איתחול
-45
-
-עיצוב - לפחות עד לרמה של הדמו
-120
-
-ריפקטור
-60
-
-הרחבת המחסן (רשות) לזכור כל מה שחצבנו וכמות שלהם
-120
-
-יצירת עולם מחולל רקע (עננים? עצים) רשות
-120
-
-צלילי חציבה?
-30
-
-אנימציית חציבה + תזמון משך הלחיצה? (גיף)
-30
-
-Theme של ה nether
-45
+### 
+A 2d mini game, with several mechanics
+- Randomization of the order of game tiles in the beginning of the game
+- Tool mechanic - certain tools can only interact with certain tiles
+- One slot inventory system- the player collect the tile he removed
+- Draw mode - a mode that enable placing tiles on the game-board and then playing it
+- Score mechanic
+- Merchant mechanic- the merchant apear randomly, the player can sell him the gold tile
+- Sound and music -
+- Responsive to mobile
+* methods :
+  - 

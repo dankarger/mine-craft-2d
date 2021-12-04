@@ -2,7 +2,6 @@ import {isDrawMode} from "./main.js";
 import {currentTool,replaceTile, drawModeEnd} from "./main.js";
 import {Tile,tileGrass,tileGround,tileSky,tileRockUp} from "./tile.js";
 import {playSound} from "./sound.js";
-
 const drawModeTools = document.querySelector('.draw-mode-tools')
 const tools = document.querySelectorAll('.tools')
 const slot1 = document.querySelector('.slot1')

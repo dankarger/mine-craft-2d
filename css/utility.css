@@ -9,7 +9,8 @@
 /*Music player*/
 
 audio {
-    max-width:160px;
+    width:100%;
+    max-width:360px;
     max-height:200px;
 }
 
@@ -18,8 +19,8 @@ audio {
     display: flex;
     justify-content: right;
     position: absolute;
-    top:5rem;
-    right: 1rem;
+    bottom:5rem;
+    left: 1rem;
 
 }
 

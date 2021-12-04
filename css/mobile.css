@@ -8,21 +8,57 @@
 
 body {
     flex-direction: column-reverse;
-    overflow-y: scroll;
+    /*overflow-y: scroll;*/
+    overflow: visible;
     justify-content: space-between;
-    width:100vw;
-    height:100vh;
-    padding: 0;
+    /*width:100vw;*/
+    /*height:100vh;*/
+    /*padding-top:15rem;*/
     margin: 0;
+    padding-top:50%;
 }
 
 #gameBoard {
-    width:100vw;
-    height:50vh;
-    top:50%
+
+    width:100vmin;
+    height:60vmin;
+    top:100vh
+    /*bottom: 50%;*/
 }
 /*tools*/
 
+
+.left-menu {
+    height:100%;
+    margin-top:80vh;
+}
+.left-menu::before {
+    display: none;
+
+
+}
+.header-container {
+    display: none;
+}
+.left-menu-text {
+  min-height:300px;
+    height:40%;
+    width:100%;
+    margin-top:10rem;
+    font-size:2rem;
+}
+
+h4 {
+    font-size: calc(0.5rem  + 0.5vw );
+    font-weight: 400;
+    margin:.5rem 1rem;
+}
+
+h3 {
+    font-size: calc(0.7rem  + 1vw );
+    font-weight: 600;
+    margin:1rem 1.5rem;
+}
 .tools-div {
 
     flex-direction: row;
@@ -63,10 +99,15 @@ body {
     background: rgba(208, 199, 199, 0.37);
 }
 .score {
-    width:80px;
-    height:30px;
+    /*margin-top:2rem;*/
+    min-width:30px;
+    min-height:10px;
     white-space: nowrap;
-    font-size: 16px;
+    font-size: calc(0.4rem  + 0.5vw );
+    width:10%;
+    height:7%;
+    top: 5px;
+    right:5px;
 }
 
 

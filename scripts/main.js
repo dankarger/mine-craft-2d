@@ -103,7 +103,7 @@ export function slot1Update(tile) {
 }
 
 export function slot1Empty(tile,target) {
-    if(tile.dataset.type === tileMerchant.type)  return validateTrade(target)
+    if(tile.dataset.type === tileMerchant.type)  return validateTrade(target,tile)
     slot1.style.background = 'transparent'
     if(currentTileinInventory!=='none' ) {
 
@@ -121,12 +121,15 @@ export function slot1Empty(tile,target) {
     console.log(currentTileinInventory)
 }
 
-function validateTrade(tile) {
+function validateTrade(tile,merchant) {
     if (tile.dataset.type === tileGold.type) {
         currentTileinInventory='none'
         slot1.style.background = 'transparent'
         score+=100;
         updateScore()
+         replaceTile(merchant, tileSky)
+        createMerchant()
+        createGold()
         return  playSound('../sounds/cash.wav')
     }else{
        return playSound('../sounds/electric_alert.wav')

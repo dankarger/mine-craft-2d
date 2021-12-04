@@ -1,8 +1,10 @@
 import {Tile, tileSky, tileGround, tileGrass, tileRock,
         tileWood, tileRockUp, tileBush,tileTree,tileCloud,tileGold,tileMerchant} from "./tile.js";
-import {createRandomNumber, injectCell2, populate} from "./gameboard.js"
+import {createMerchant, createRandomNumber, injectCell2, populate, createGold} from "./gameboard.js"
 import {playMusic, playSound} from "./sound.js";
 import {wrongTools, slot1 } from "./inventory.js";
+import {drawModeActivate, drawModeInjectTile} from "./draw-mode.js";
+
 export let currentTool
 export let currentTileinInventory='none'
 const gameBoard = document.querySelector('#gameBoard');
@@ -10,10 +12,13 @@ const toolsList = document.querySelectorAll('.tools')
 const tooldDiv = document.querySelector('.tools-div')
 const body = document.querySelector('body')
 const playButton = document.querySelector('.play-button')
+const drawModeButton =document.querySelector('.draw-button')
 const homePage = document.querySelector('#home-page')
 let score = 0;
+export let isDrawMode = false;
 
 // Home-page
+
 playButton.addEventListener('click',()=>{
     playSound('../sounds/round_pop_click2.wav')
     homePage.classList.add('display-none')
@@ -22,6 +27,15 @@ playButton.addEventListener('click',()=>{
     playMusic()
 })
 
+drawModeButton.addEventListener('click',()=>{
+    playSound('../sounds/round_pop_click2.wav')
+    homePage.classList.add('display-none')
+    isDrawMode = true
+    drawModeActivate()
+    populate()
+    updateScore()
+    // playMusic()
+})
 
 // tools
 
@@ -41,19 +55,20 @@ gameBoard.addEventListener('click',(event)=> {
     if (!event.target.dataset) return
     let tile = event.target;
     if (event.target !== gameBoard) {
-        if ((tile.dataset.type === "tileGrass"||tile.dataset.type === "tileGround" )
+        if(isDrawMode) return drawModeInjectTile(tile)
+        if ((tile.dataset.type === tileGrass.type||tile.dataset.type === tileGround.type )
               && currentTool.dataset.tool === tileGround.tool) {
             return toolAction(tile,"../sounds/round_pop_click.wav")
         }
-        if ((tile.dataset.type === "tileWood" ||tile.dataset.type === "tileBush"||tile.dataset.type === "tileTree")
+        if ((tile.dataset.type === tileWood.type ||tile.dataset.type === tileBush.type||tile.dataset.type === tileTree.type)
             && currentTool.dataset.tool === tileWood.tool) {
                  return toolAction(tile,"../sounds/round_pop_click2.wav")
         }
-        if ((tile.dataset.type === "tileRock" || tile.dataset.type === "tileRockUp"||tile.dataset.type  === 'tileGold')
+        if ((tile.dataset.type === tileRock.type || tile.dataset.type === tileRockUp.type||tile.dataset.type  === tileGold.type)
             && currentTool.dataset.tool === tileRock.tool) {
                 return toolAction(tile,"../sounds/round_pop_click2.wav")
         }
-            if ((tile.dataset.type === "tileSky" ||tile.dataset.type === "tileMerchant" )&& currentTool.dataset.tool === "slot1") {
+            if ((tile.dataset.type === tileSky.type ||tile.dataset.type === tileMerchant.type )&& currentTool.dataset.tool === "slot1") {
                 if(currentTool.style.background==='white') return
                 return slot1Empty(tile, currentTileinInventory)
         }else{
@@ -124,6 +139,11 @@ function updateScore (){
 
 }
 
-
+export  function drawModeEnd() {
+    isDrawMode = false;
+    createGold()
+    createMerchant()
+    playMusic()
+}
 // TODO: remove const tools from inventory.sj
 // TODO:change sounds

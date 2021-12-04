@@ -44,17 +44,26 @@
 </div>
 <div class="left-menu ">
     <div class="left-menu-text">
-        <div class="container">
+        <div class="container play-mode-text">
             <h3>Instructions:</h3>
             <h4>⦿ Choose the right tool to harvest the  different Materials</h4>
             <h4>⦿ You can place the materials anywhere on the grid</h4>
             <h4>⦿ You can sell the gold to the merchant  </h4>
         </div>
+        <div class="draw-mode-text draw-mode-off">
+            <h3>Instructions:</h3>
+            <h3><strong>DRAW MODE</strong></h3>
+            <h4>⦿ Choose different tiles of materials and put them on the grid</h4>
+            <h4>⦿ You can place the materials anywhere on the grid</h4>
+            <h4>⦿ Press the PLAY button to start playing  </h4>
+        </div>
     </div>
 </div>
 <div class="main">
+
     <div id="gameBoard">
         <div class="score"></div>
+        <div class="play-button-in-draw-mode  draw-mode-off">Play</div>
     </div>
 </div>
 <div class="tools-div">
@@ -62,10 +71,11 @@
     <div class="tools axe" data-tool="axe"></div>
     <div class="tools pickaxe" data-tool="pickaxe"></div>
     <div class=" slot1" data-tool="slot1" data-item="false" ></div>
-    <div class="draw-mode-tools">
-        <div class="tools sky" data-tool="shovel"> </div>
-        <div class="tools grass" data-tool="axe"></div>
-        <div class="tools ground" data-tool="pickaxe"></div>
+    <div class="draw-mode-tools draw-mode-off">
+        <div class="tools-draw sky" data-tool="tileSky"> </div>
+        <div class="tools-draw grass" data-tool="tileGrass"></div>
+        <div class="tools-draw ground" data-tool="tileGround"></div>
+        <div class="tools-draw rockUp" data-tool="tileRockUp"></div>
 <!--        <div class=" slot1" data-tool="slot1" data-item="false" ></div>-->
     </div>
 </div>

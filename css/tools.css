@@ -15,7 +15,7 @@
     margin-left:1rem;
     margin-right:1rem;
 }
-.tools:hover {
+.tools:hover ,.tools-draw:hover{
     transform: scale(1.041);
     transition: 200ms ease-in;
 }
@@ -23,7 +23,7 @@
     transform: scale(1.041);
     transition: 200ms ease-in;
 }
-.selected-tool{
+.selected-tool {
     transform: scale(1.041);
     /*filter: brightness(90%);*/
     filter: brightness(90%);
@@ -41,7 +41,7 @@
     background: rgba(255, 215, 0, 0.35);
 }
 
-.tools {
+.tools , .tools-draw{
     min-width:90%;
     height: 30%;
     border:3px solid #d0c7c7;

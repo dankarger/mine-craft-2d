@@ -1,7 +1,49 @@
 .draw-mode-tools {
+    min-height:50px;
+    min-width:50px;
+    width:100%;
+    height: 100%;
+}
+.play-button-in-draw-mode {
+    width:110px;
+    height:50px;
+    position: absolute;
+    top:0;
+    left:0;
+    color:white;
+    font-size:3rem;
+    border: 3px solid white;
+    border-radius: 20px;
+    background: rgba(213, 205, 205, 0.4);
+    padding:0.5rem 0.3rem;
+    cursor: pointer;
+}
+
+.play-button-in-draw-mode:hover {
+    filter: brightness(80%);
+}
+
+.tools-draw {
+    height:100px;
+
+    width:100px;
+}
+.draw-mode-tools .grass {
+    background: url("../images/grass.png");
+}
+.draw-mode-tools .ground {
+    background: url("../images/ground.jpg");
+}
+.draw-mode-tools .sky {
+    background: url("../images/sky.png");
+}
+.draw-mode-tools .rockUp {
+    background: url("../images/rock3.png");
+}
+.draw-mode-off {
     display:none
 }
 
-.draw-mode-tools .grass {
-    background: url("");
+.draw-mode-text strong {
+    color:var(--color-red)
 }

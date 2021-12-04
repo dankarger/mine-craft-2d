@@ -1,6 +1,6 @@
 import {Tile, tileGrass, tileGround, tileRock, tileSky, tileRockUp,
         tileWood, tileBush,tileTree,tileCloud, tileGold,tileMerchant} from "./tile.js";
-import {replaceTile} from "./main.js";
+import {replaceTile, isDrawMode} from "./main.js";
 import {playSound} from "./sound.js";
 
 const gameBoard = document.querySelector('#gameBoard');
@@ -36,9 +36,10 @@ export function populate() {
     createBush()
     createTree()
     creatClouds()
-    createGold()
-    createMerchant()
-
+    if(!isDrawMode) {
+        createGold()
+        createMerchant()
+    }
 }
 
 function selectBottomRowSkyTile(){
@@ -102,7 +103,7 @@ function creatClouds() {
     }
 }
 
-function createGold(){
+export function createGold(){
     let random1  =createRandomNumber(17)+1
     let  random2 =18-createRandomNumber(4)
     let randomTile = gameBoard.querySelector(`[data-position-x="${random1}"]+[data-position-y="${random2}"]`)
@@ -110,7 +111,7 @@ function createGold(){
 
 }
 
-function createMerchant() {
+ export function createMerchant() {
     let random1  =createRandomNumber(18)+1
     let randomTile = gameBoard.querySelector(`[data-position-x="${random1}"]+[data-position-y="13"]`);
     // if (randomTile.dataset.type!==tileSky.type) return createMerchant()

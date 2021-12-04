@@ -12,6 +12,7 @@ const images = {
     tree:"url('../images/tree.png')",
     bush:"url('../images/bush3.png')",
     merchant:"url('../images/man.png')",
+    diamond:"url('../images/man.png')"
 }
 
 export class Tile {

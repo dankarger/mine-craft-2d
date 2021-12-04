@@ -124,6 +124,5 @@ function updateScore (){
 }
 
 
-
 // TODO: remove const tools from inventory.sj
 // TODO:change sounds

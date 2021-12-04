@@ -62,8 +62,9 @@ function createBush() {
 function createTree() {
     const bottomRowSkyTiles = gameBoard.querySelectorAll('[data-position-y="13"]')
     const randomIndex = createRandomNumber(15)+1
+    console.log('random',randomIndex)
     const positionX = bottomRowSkyTiles[randomIndex].dataset.positionX
-    if (bottomRowSkyTiles[randomIndex].dataset.type !== 'tileSky') return  createTree()
+    if (bottomRowSkyTiles[randomIndex].dataset.type !== 'tileSky'||bottomRowSkyTiles[randomIndex].dataset.positionX >18 ) return  createTree()
     replaceTile(bottomRowSkyTiles[randomIndex], tileWood)
     const upperTrunk = gameBoard.querySelector(`[data-position-x="${positionX}"] + [data-position-y="12"]`)
     replaceTile(upperTrunk,tileWood)
@@ -102,7 +103,7 @@ function creatClouds() {
 }
 
 function createGold(){
-    let random1  =createRandomNumber(17)
+    let random1  =createRandomNumber(17)+1
     let  random2 =18-createRandomNumber(4)
     let randomTile = gameBoard.querySelector(`[data-position-x="${random1}"]+[data-position-y="${random2}"]`)
     replaceTile(randomTile,tileGold)
@@ -110,8 +111,9 @@ function createGold(){
 }
 
 function createMerchant() {
-    let random1  =createRandomNumber(17)
+    let random1  =createRandomNumber(16)+1
     let randomTile = gameBoard.querySelector(`[data-position-x="${random1}"]+[data-position-y="13"]`);
+    if (randomTile.dataset.type!==tileSky.type) return createMerchant()
     setTimeout(()=>{
         replaceTile(randomTile,tileMerchant)
         playSound("../sounds/melodic5_affirm.wav")

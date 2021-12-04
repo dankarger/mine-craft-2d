@@ -1,0 +1,23 @@
+/* Home page */
+
+.buttons-div{
+    margin: auto;
+}
+
+/* Game*/
+
+body {
+    flex-direction: column-reverse;
+    overflow-y: scroll;
+}
+#gameBoard {
+width:100vmin;
+height:80vmin;
+}
+/*tools*/
+
+.tools-div {
+    flex-direction: row;
+    min-height: 200px;
+    min-width:200px
+}

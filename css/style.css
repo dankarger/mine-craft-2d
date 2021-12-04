@@ -12,13 +12,8 @@ body {
     font-size: 100%;
     background-color: rgba(0, 0, 0, 0.85);
     background: rgb(227,143,102);
-    background: linear-gradient(95deg, rgba(227,143,102,1) 0%, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 26%, rgba(1,1,1,1) 75%, rgba(78,75,102,1) 89%);
     overflow: hidden;
     background: url("../images/body-background1.png")no-repeat center center/cover;
-}
-
-#main {
-    /*background: url("../images/background1.jpeg");*/
 }
 
 #gameBoard {

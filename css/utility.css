@@ -24,12 +24,17 @@ audio {
 
 }
 .buttons-div {
+    width:50%;
+    height: 100%;
+
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top:20vh;
-    margin-left:15vw;
+    justify-self: left;
+
+
+
 }
 button {
     width:300px;

@@ -62,7 +62,10 @@ restartButton.addEventListener('click',()=>{
     updateScore()
     playMusic()
     isRestart=false
-    if(!isDrawMode)createMerchant()
+    if(!isDrawMode){
+        createGold()
+        createMerchant()
+    }
 
 })
 

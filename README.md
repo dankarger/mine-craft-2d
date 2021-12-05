@@ -14,7 +14,7 @@ with several mechanics:
 - Score mechanic .
 - Merchant mechanic- the merchant and the gold tile appear randomly, the player can sell him the gold tile.
 - Sound and music - sound effects on interactions, and background music with an audio controller.
-- Responsive to mobile.
+
 
 
 

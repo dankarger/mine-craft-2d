@@ -19,7 +19,7 @@ audio {
     display: flex;
     justify-content: right;
     position: absolute;
-    bottom:5rem;
+    bottom:15px;
     left: 1rem;
 
 }

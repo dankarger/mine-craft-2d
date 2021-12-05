@@ -1,6 +1,6 @@
 import {isDrawMode} from "./main.js";
 import {currentTool,replaceTile, drawModeEnd} from "./main.js";
-import {Tile,tileGrass,tileGround,tileSky,tileRockUp} from "./tile.js";
+import {Tile,tileGrass,tileGround,tileSky,tileRockUp,tileTree,tileWood} from "./tile.js";
 import {playSound} from "./sound.js";
 const drawModeTools = document.querySelector('.draw-mode-tools')
 const tools = document.querySelectorAll('.tools')
@@ -15,6 +15,8 @@ const tilesList = {
     'tileGround':tileGround,
     'tileSky':tileSky,
     'tileRockUp':tileRockUp,
+    'tileTree':tileTree,
+    'tileWood':tileWood,
 }
 
 playButton.addEventListener('click',()=>{

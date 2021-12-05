@@ -3,6 +3,7 @@
     min-width:50px;
     width:100%;
     height: 100%;
+    margin-bottom:10rem;
 }
 .play-button-in-draw-mode {
     width:110px;
@@ -44,6 +45,12 @@
 }
 .draw-mode-tools .rockUp {
     background: url("../images/rock3.png");
+}
+.draw-mode-tools .tree {
+    background: url("../images/tree.png");
+}
+.draw-mode-tools .wood {
+    background: url("../images/wood2.png");
 }
 .draw-mode-off {
     display:none

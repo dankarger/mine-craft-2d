@@ -6,13 +6,14 @@ body {
     width: 100vw;
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: start;
     margin: 0;
     font-family: 'Fuzzy Bubbles', cursive;
     font-size: 100%;
     background-color: rgba(0, 0, 0, 0.85);
     background: rgb(227,143,102);
     overflow: hidden;
+    /*overflow-y: scroll;*/
     background: url("../images/body-background1.png")no-repeat center center/cover;
 }
 

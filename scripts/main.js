@@ -85,6 +85,7 @@ gameBoard.addEventListener('click',(event)=> {
 
 export function replaceTile(tile, target) {
         let newTile = new Tile(target)
+        if(tile===null) return  console.log('g')
         newTile.position = {x: tile.dataset.positionX, y: tile.dataset.positionY}
         tile.remove(tile)
         injectCell2(newTile);

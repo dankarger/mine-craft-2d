@@ -33,8 +33,6 @@ function randomizePlayList(tracks) {
 
 }
 audioObject.addEventListener('ended',function(){
-    const track2 = document.querySelector(".track2")
-    const track1 = document.querySelector(".track1")
     randomizePlayList(playList)
     return audioObject.play()
 

@@ -9,6 +9,7 @@ const score =document.querySelector('.score')
 const playButton = document.querySelector('.play-button-in-draw-mode')
 const instructions = document.querySelector('.draw-mode-text')
 const playModInstructionsnstructions = document.querySelector('.play-mode-text')
+
 const tilesList = {
     'tileGrass':tileGrass,
     'tileGround':tileGround,

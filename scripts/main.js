@@ -106,7 +106,6 @@ export function slot1Empty(tile,target) {
     if(tile.dataset.type === tileMerchant.type)  return validateTrade(target,tile)
     slot1.style.background = 'transparent'
     if(currentTileinInventory!=='none' ) {
-
         playSound("../sounds/short_whoosh1.wav")
         if (target.dataset.type === tileGrass.type)  replaceTile(tile, tileGrass)
         if (target.dataset.type === tileGround.type) replaceTile(tile, tileGround)

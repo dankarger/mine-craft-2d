@@ -7,7 +7,7 @@
 
 A 2d mini game inspired by Minecraft
 with several mechanics:
-- Randomization of the game tiles in the beginning of the game.
+- Populate function - randomization the game tiles in the beginning of the game and create the game board.
 - Tool mechanic - certain tools can only interact with certain tiles.
 - One slot inventory system- the player collect the tile he removed, the tile can be place back.
 - Draw mode - a mode that enable placing tiles on the game-board without harvesting them first.
@@ -16,7 +16,7 @@ with several mechanics:
 - Sound and music - sound effects on interactions, and background music with an audio controller.
 - Responsive to mobile.
 
-I used 
+
 
 Music used:
 - Sweden - Minecraft [Piano Tutorial] (Synthesia) // Torby Brand

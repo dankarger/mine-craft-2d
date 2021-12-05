@@ -64,6 +64,11 @@ button img::selection {
     margin-top:2rem;
     margin-left: 5%;
 }
+
+.restart-button {
+    width:50%;
+    height:50px;
+}
 hr {
     color:var(--color-white);
 }

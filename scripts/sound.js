@@ -1,7 +1,5 @@
 import {createRandomNumber} from "./gameboard.js";
 const audioObject = document.querySelector('#music-player')
-// const track1 = document.querySelector(".track1")
-// const track2 = document.querySelector(".track2")
 
 const playList = [
     "./sounds/music2.mp3",
@@ -22,8 +20,8 @@ export function playMusic() {
 }
 
 function randomizePlayList(tracks) {
-    let randomNumber = createRandomNumber(2)
-      randomNumber<1
+    let randomNumber = createRandomNumber(3)
+      randomNumber<2
         ? audioObject.innerHTML=`  <source  class="track1" src="${playList[0]}" type="audio/ogg" data-track-number="1">
          <source class="track2"  src="${playList[1]}" type="audio/wav" data-track-number="2">
          `

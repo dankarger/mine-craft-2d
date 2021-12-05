@@ -1,5 +1,6 @@
-import {currentTool,currentTileinInventory} from "./main.js";
+import {currentTool,currentTileinInventory,isRestart} from "./main.js";
 export let slot1 = document.querySelector('.slot1')
+
 export const tools = {
     shovel:'shovel',
     axe:"axe",

@@ -1,9 +1,10 @@
 import {Tile, tileGrass, tileGround, tileRock, tileSky, tileRockUp,
         tileWood, tileBush,tileTree,tileCloud, tileGold,tileMerchant} from "./tile.js";
-import {replaceTile, isDrawMode} from "./main.js";
+import {replaceTile, isDrawMode, isRestart} from "./main.js";
 import {playSound} from "./sound.js";
 
 const gameBoard = document.querySelector('#gameBoard');
+let isMerchantInMaking = false
 
 export function injectCell2(tile) {
     let currentTile = document.createElement('div')
@@ -13,7 +14,7 @@ export function injectCell2(tile) {
     currentTile.dataset.positionX  = tile.position.x
     currentTile.dataset.positionY  = tile.position.y
     currentTile.dataset.type = tile.type
-   return gameBoard.appendChild(currentTile)
+    return gameBoard.appendChild(currentTile)
 }
 
 export function populate() {
@@ -35,7 +36,7 @@ export function populate() {
     createBush()
     createTree()
     creatClouds()
-    if(!isDrawMode) {
+    if(!isDrawMode&& !isRestart) {
         createGold()
         createMerchant()
     }
@@ -112,10 +113,14 @@ export function createGold(){
  export function createMerchant() {
     let random1  =createRandomNumber(17)+2
     let randomTile = gameBoard.querySelector(`[data-position-x="${random1}"]+[data-position-y="13"]`);
-    setTimeout(()=>{
-        replaceTile(randomTile,tileMerchant)
-        playSound("../sounds/melodic5_affirm.wav")
-    },7000)
+    if(!isMerchantInMaking) {
+        isMerchantInMaking=true
+        setTimeout(() => {
+            replaceTile(randomTile, tileMerchant);
+            playSound("../sounds/melodic5_affirm.wav");
+            isMerchantInMaking=false;
+        }, 7000)
+    }
 }
 
 export function createRandomNumber(range) {

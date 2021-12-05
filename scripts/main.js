@@ -8,14 +8,16 @@ import {drawModeActivate, drawModeInjectTile} from "./draw-mode.js";
 export let currentTool
 export let currentTileinInventory='none'
 const gameBoard = document.querySelector('#gameBoard');
-const toolsList = document.querySelectorAll('.tools')
-const tooldDiv = document.querySelector('.tools-div')
-const body = document.querySelector('body')
-const playButton = document.querySelector('.play-button')
-const drawModeButton =document.querySelector('.draw-button')
-const homePage = document.querySelector('#home-page')
+const toolsList = document.querySelectorAll('.tools');
+const tooldDiv = document.querySelector('.tools-div');
+const body = document.querySelector('body');
+const playButton = document.querySelector('.play-button');
+const drawModeButton =document.querySelector('.draw-button');
+const homePage = document.querySelector('#home-page');
+const restartButton =document.querySelector('.restart-button');
 let score = 0;
 export let isDrawMode = false;
+export let isRestart = false;
 
 // Home-page
 
@@ -49,6 +51,21 @@ tooldDiv.addEventListener('click',(event)=> {
         selectedTool.classList.toggle('selected-tool')
     }
 })
+
+// restart
+restartButton.addEventListener('click',()=>{
+    playSound('../sounds/round_pop_click2.wav')
+    homePage.classList.add('display-none')
+    isRestart=true;
+    populate()
+    score=0;
+    updateScore()
+    playMusic()
+    isRestart=false
+    if(!isDrawMode)createMerchant()
+
+})
+
 
 // GameBoard interaction
 gameBoard.addEventListener('click',(event)=> {

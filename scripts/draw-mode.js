@@ -8,7 +8,7 @@ const slot1 = document.querySelector('.slot1')
 const score =document.querySelector('.score')
 const playButton = document.querySelector('.play-button-in-draw-mode')
 const instructions = document.querySelector('.draw-mode-text')
-const playModInstructionsnstructions = document.querySelector('.play-mode-text')
+const playModeInstructions = document.querySelector('.play-mode-text')
 
 const tilesList = {
     'tileGrass':tileGrass,
@@ -33,7 +33,7 @@ export function  drawModeActivate() {
          playButton.classList.toggle('draw-mode-off');
          drawModeTools.classList.toggle('draw-mode-off');
          instructions.classList.toggle('draw-mode-off');
-         playModInstructionsnstructions.classList.toggle('draw-mode-off');
+         playModeInstructions.classList.toggle('draw-mode-off');
 }
 
 export function drawModeInjectTile(tile) {
